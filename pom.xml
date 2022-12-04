@@ -18,8 +18,15 @@
 
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
+    <name>${project.artifactId}</name>
     <version>2022.1.0</version>
     <packaging>pom</packaging>
+
+    <inceptionYear>2016-2022</inceptionYear>
+    <url>https://github.com/pnoker/iot-dc3</url>
+    <description>
+        IOT DC3 平台 父级 Maven Pom 配置。
+    </description>
 
     <developers>
         <developer>
@@ -38,12 +45,11 @@
         </license>
     </licenses>
 
-    <name>${project.artifactId}</name>
-    <url>https://github.com/pnoker/iot-dc3</url>
-    <inceptionYear>2016-2022</inceptionYear>
-    <description>
-        IOT DC3 平台 父级 Maven Pom 配置。
-    </description>
+    <scm>
+        <url>https://github.com/pnoker/iot-dc3</url>
+        <connection>https://github.com/pnoker/iot-dc3.git</connection>
+        <developerConnection>https://github.com/pnoker/iot-dc3.git</developerConnection>
+    </scm>
 
     <properties>
         <java.version>1.8</java.version>
