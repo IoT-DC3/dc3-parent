@@ -22,7 +22,7 @@
     <parent>
         <groupId>io.github.pnoker</groupId>
         <artifactId>dc3-parent</artifactId>
-        <version>2022.1.3</version>
+        <version>2022.1.4</version>
     </parent>
 
     <name>${project.artifactId}</name>
@@ -58,6 +58,7 @@
 
     <modules>
         <module>dc3-common-web</module>
+        <module>dc3-common-feign</module>
         <module>dc3-common-mysql</module>
         <module>dc3-common-redis</module>
         <module>dc3-common-thread</module>
