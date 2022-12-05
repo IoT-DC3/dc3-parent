@@ -17,9 +17,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.pnoker</groupId>
-    <artifactId>dc3-parent</artifactId>
+    <version>2022.1.2</version>
+
     <name>${project.artifactId}</name>
-    <version>2022.1.1</version>
+    <artifactId>dc3-parent</artifactId>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -40,7 +41,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -113,14 +114,6 @@
     </profiles>
 
     <dependencies>
-
-        <!-- Spring Configuration-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
 
         <!-- Test -->
         <dependency>
@@ -332,12 +325,6 @@
             <dependency>
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-api-data</artifactId>
-                <version>${project.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.github.pnoker</groupId>
-                <artifactId>dc3-api-rtmp</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
