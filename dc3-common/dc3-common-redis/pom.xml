@@ -22,7 +22,7 @@
     <parent>
         <groupId>io.github.pnoker</groupId>
         <artifactId>dc3-common</artifactId>
-        <version>2022.1.4</version>
+        <version>2022.1.6</version>
     </parent>
 
     <name>${project.artifactId}</name>
@@ -83,5 +83,18 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
