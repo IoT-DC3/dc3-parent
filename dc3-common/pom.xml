@@ -22,7 +22,7 @@
     <parent>
         <groupId>io.github.pnoker</groupId>
         <artifactId>dc3-parent</artifactId>
-        <version>2022.1.6</version>
+        <version>2022.1.7</version>
     </parent>
 
     <name>${project.artifactId}</name>
@@ -56,13 +56,19 @@
         <developerConnection>https://github.com/pnoker/iot-dc3.git</developerConnection>
     </scm>
 
-    <dependencies>
+    <modules>
+        <module>dc3-common-web</module>
+        <module>dc3-common-mysql</module>
+        <module>dc3-common-redis</module>
+        <module>dc3-common-feign</module>
+        <module>dc3-common-thread</module>
+        <module>dc3-common-log</module>
+        <module>dc3-common-public</module>
+        <module>dc3-common-exception</module>
+        <module>dc3-common-profiles</module>
+    </modules>
 
-        <!-- Slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
+    <dependencies>
 
     </dependencies>
 
