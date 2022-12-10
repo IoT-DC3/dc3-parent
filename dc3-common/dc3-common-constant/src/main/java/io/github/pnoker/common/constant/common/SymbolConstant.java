@@ -15,25 +15,49 @@
 package io.github.pnoker.common.constant.common;
 
 /**
- * 时间 相关常量
+ * 符号 相关常量
  *
  * @author pnoker
  * @since 2022.1.0
  */
-public class TimeConstant {
+public class SymbolConstant {
 
-    private TimeConstant() {
-        throw new IllegalStateException(ExceptionConstant.UTILITY_CLASS);
+    private SymbolConstant() {
+        throw new IllegalStateException("Utility class");
     }
 
     /**
-     * 时区
+     * 点
      */
-    public static final String TIMEZONE = "GMT+8";
+    public static final String DOT = ".";
 
     /**
-     * 时间格式化
+     * 下划线
      */
-    public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
-    public static final String COMPLETE_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
+    public static final String UNDERSCORE = "_";
+
+    /**
+     * 连接线
+     */
+    public static final String HYPHEN = "-";
+
+    /**
+     * 星号
+     */
+    public static final String ASTERISK = "*";
+
+    /**
+     * 井号
+     */
+    public static final String HASHTAG = "#";
+
+    /**
+     * 分隔符
+     */
+    public static final String SEPARATOR = "::";
+
+    /**
+     * 斜线
+     */
+    public static final String SLASH = "/";
 }
