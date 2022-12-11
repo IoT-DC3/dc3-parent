@@ -323,7 +323,7 @@
                 <version>${hutool.version}</version>
             </dependency>
 
-            <!-- Dc3 Api -->
+            <!-- DC3 Api -->
             <dependency>
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-api-auth</artifactId>
@@ -349,7 +349,7 @@
                 <scope>compile</scope>
             </dependency>
 
-            <!-- Dc3 Driver Sdk  -->
+            <!-- DC3 Driver Sdk  -->
             <dependency>
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-driver-sdk</artifactId>
@@ -357,7 +357,7 @@
                 <scope>compile</scope>
             </dependency>
 
-            <!-- Dc3 Common -->
+            <!-- DC3 Common -->
             <dependency>
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-web</artifactId>
@@ -409,6 +409,12 @@
             <dependency>
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-profiles</artifactId>
+                <version>${dc3.common.profiles.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.pnoker</groupId>
+                <artifactId>dc3-common-constant</artifactId>
                 <version>${dc3.common.profiles.version}</version>
                 <scope>compile</scope>
             </dependency>

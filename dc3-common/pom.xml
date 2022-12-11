@@ -65,7 +65,9 @@
         <module>dc3-common-log</module>
         <module>dc3-common-public</module>
         <module>dc3-common-exception</module>
+        <module>dc3-common-constant</module>
         <module>dc3-common-profiles</module>
+        <module>dc3-common-model</module>
     </modules>
 
     <dependencies>
