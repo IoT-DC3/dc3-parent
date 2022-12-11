@@ -71,6 +71,18 @@
             <artifactId>mybatis-plus-core</artifactId>
         </dependency>
 
+        <!-- Mybatis Plus Extension -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
+        </dependency>
+
+        <!-- Caffeine Cache -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
         <!-- File Upload -->
         <dependency>
             <groupId>commons-fileupload</groupId>
@@ -83,26 +95,16 @@
             <artifactId>jjwt</artifactId>
         </dependency>
 
-        <!-- Hutool -->
+        <!-- DC3 Common Constant -->
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
+            <groupId>io.github.pnoker</groupId>
+            <artifactId>dc3-common-constant</artifactId>
         </dependency>
 
         <!-- DC3 Common Exception -->
         <dependency>
             <groupId>io.github.pnoker</groupId>
             <artifactId>dc3-common-exception</artifactId>
-        </dependency>
-
-        <!-- DC3 Common Constant -->
-        <dependency>
-            <groupId>io.github.pnoker</groupId>
-            <artifactId>dc3-common-constant</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-extension</artifactId>
         </dependency>
 
     </dependencies>

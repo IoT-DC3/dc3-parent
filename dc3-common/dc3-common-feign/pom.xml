@@ -71,12 +71,6 @@
             <artifactId>feign-okhttp</artifactId>
         </dependency>
 
-        <!-- Resilience4j -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
-        </dependency>
-
         <!-- Feign Jackson -->
         <dependency>
             <groupId>io.github.openfeign</groupId>
