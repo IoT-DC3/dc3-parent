@@ -16,7 +16,6 @@ package io.github.pnoker.common.utils;
 
 import cn.hutool.core.text.CharSequenceUtil;
 import io.github.pnoker.common.constant.common.ExceptionConstant;
-import io.github.pnoker.common.enums.ResponseEnum;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -30,38 +29,6 @@ public class ExceptionUtil {
 
     private ExceptionUtil() {
         throw new IllegalStateException(ExceptionConstant.UTILITY_CLASS);
-    }
-
-    /**
-     * 获取 NotFoundException 的错误信息
-     * <p>
-     * 如果为空，就返回默认的错误信息
-     *
-     * @param template 文本模板，被替换的部分用 {} 表示，如果模板为null，返回"null"
-     * @param params   参数值
-     * @return 格式化后的文本，如果模板为null，返回"null"
-     */
-    public static String getNotFoundMessage(CharSequence template, Object... params) {
-        if (CharSequenceUtil.isEmpty(template)) {
-            template = ResponseEnum.NO_RESOURCE.getMessage();
-        }
-        return CharSequenceUtil.format(template, params);
-    }
-
-    /**
-     * 获取 OutRangeException 的错误信息
-     * <p>
-     * 如果为空，就返回默认的错误信息
-     *
-     * @param template 文本模板，被替换的部分用 {} 表示，如果模板为null，返回"null"
-     * @param params   参数值
-     * @return 格式化后的文本，如果模板为null，返回"null"
-     */
-    public static String getOutRangeMessage(CharSequence template, Object... params) {
-        if (CharSequenceUtil.isEmpty(template)) {
-            template = ResponseEnum.OUT_RANGE.getMessage();
-        }
-        return CharSequenceUtil.format(template, params);
     }
 
     /**

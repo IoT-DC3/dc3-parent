@@ -17,12 +17,20 @@ package io.github.pnoker.common.exception;
 import cn.hutool.core.text.CharSequenceUtil;
 
 /**
- * 自定义 重复 异常
+ * 自定义重复异常
  *
  * @author pnoker
  * @since 2022.1.0
  */
 public class DuplicateException extends RuntimeException {
+    public DuplicateException() {
+        this(null);
+    }
+
+    public DuplicateException(Throwable cause) {
+        super(cause);
+    }
+
     public DuplicateException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

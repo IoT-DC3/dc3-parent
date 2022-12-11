@@ -23,6 +23,14 @@ import cn.hutool.core.text.CharSequenceUtil;
  * @since 2022.1.0
  */
 public class ReadPointException extends RuntimeException {
+    public ReadPointException() {
+        this(null);
+    }
+
+    public ReadPointException(Throwable cause) {
+        super(cause);
+    }
+
     public ReadPointException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

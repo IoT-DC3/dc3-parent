@@ -23,6 +23,14 @@ import cn.hutool.core.text.CharSequenceUtil;
  * @since 2022.1.0
  */
 public class UpdateException extends RuntimeException {
+    public UpdateException() {
+        this(null);
+    }
+
+    public UpdateException(Throwable cause) {
+        super(cause);
+    }
+
     public UpdateException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

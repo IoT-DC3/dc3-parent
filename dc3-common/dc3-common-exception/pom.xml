@@ -65,10 +65,10 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
-        <!-- DC3 Common Public -->
+        <!-- Hutool -->
         <dependency>
-            <groupId>io.github.pnoker</groupId>
-            <artifactId>dc3-common-public</artifactId>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
         </dependency>
 
     </dependencies>

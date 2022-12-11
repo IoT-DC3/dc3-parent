@@ -14,7 +14,7 @@
 
 package io.github.pnoker.common.exception;
 
-import io.github.pnoker.common.utils.ExceptionUtil;
+import cn.hutool.core.text.CharSequenceUtil;
 
 /**
  * 自定义 NotFound 异常
@@ -23,21 +23,15 @@ import io.github.pnoker.common.utils.ExceptionUtil;
  * @since 2022.1.0
  */
 public class NotFoundException extends RuntimeException {
-
-    /**
-     * NotFoundException
-     */
     public NotFoundException() {
         this(null);
     }
 
-    /**
-     * NotFoundException
-     *
-     * @param template 文本模板，被替换的部分用 {} 表示，如果模板为null，返回"null"
-     * @param params   参数值
-     */
+    public NotFoundException(Throwable cause) {
+        super(cause);
+    }
+
     public NotFoundException(CharSequence template, Object... params) {
-        super(ExceptionUtil.getNotFoundMessage(template, params));
+        super(CharSequenceUtil.format(template, params));
     }
 }

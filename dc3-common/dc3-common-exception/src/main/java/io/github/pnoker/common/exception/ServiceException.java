@@ -23,6 +23,14 @@ import cn.hutool.core.text.CharSequenceUtil;
  * @since 2022.1.0
  */
 public class ServiceException extends RuntimeException {
+    public ServiceException() {
+        this(null);
+    }
+
+    public ServiceException(Throwable cause) {
+        super(cause);
+    }
+
     public ServiceException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

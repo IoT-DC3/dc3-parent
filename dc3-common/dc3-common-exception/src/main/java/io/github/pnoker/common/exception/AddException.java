@@ -17,12 +17,20 @@ package io.github.pnoker.common.exception;
 import cn.hutool.core.text.CharSequenceUtil;
 
 /**
- * 自定义 新增数据 异常
+ * 自定义新增异常
  *
  * @author pnoker
  * @since 2022.1.0
  */
 public class AddException extends RuntimeException {
+    public AddException() {
+        this(null);
+    }
+
+    public AddException(Throwable cause) {
+        super(cause);
+    }
+
     public AddException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

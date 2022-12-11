@@ -22,8 +22,16 @@ import cn.hutool.core.text.CharSequenceUtil;
  * @author pnoker
  * @since 2022.1.0
  */
-public class UnsupportException extends RuntimeException {
-    public UnsupportException(CharSequence template, Object... params) {
+public class UnSupportException extends RuntimeException {
+    public UnSupportException() {
+        this(null);
+    }
+
+    public UnSupportException(Throwable cause) {
+        super(cause);
+    }
+
+    public UnSupportException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }
 }

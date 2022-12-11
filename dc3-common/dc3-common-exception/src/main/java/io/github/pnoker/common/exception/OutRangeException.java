@@ -14,7 +14,7 @@
 
 package io.github.pnoker.common.exception;
 
-import io.github.pnoker.common.utils.ExceptionUtil;
+import cn.hutool.core.text.CharSequenceUtil;
 
 /**
  * 自定义 超出范围 异常
@@ -23,21 +23,19 @@ import io.github.pnoker.common.utils.ExceptionUtil;
  * @since 2022.1.0
  */
 public class OutRangeException extends RuntimeException {
-
-    /**
-     * OutRangeException
-     */
     public OutRangeException() {
         this(null);
     }
 
-    /**
-     * OutRangeException
-     *
-     * @param template 文本模板，被替换的部分用 {} 表示，如果模板为null，返回"null"
-     * @param params   参数值
-     */
+    public OutRangeException(Throwable cause) {
+        super(cause);
+    }
+
     public OutRangeException(CharSequence template, Object... params) {
-        super(ExceptionUtil.getOutRangeMessage(template, params));
+        super(getOutRangeMessage(template, params));
+    }
+
+    private static String getOutRangeMessage(CharSequence template, Object... params) {
+        return CharSequenceUtil.format(template, params);
     }
 }

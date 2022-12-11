@@ -23,6 +23,14 @@ import cn.hutool.core.text.CharSequenceUtil;
  * @since 2022.1.0
  */
 public class UnAuthorizedException extends RuntimeException {
+    public UnAuthorizedException() {
+        this(null);
+    }
+
+    public UnAuthorizedException(Throwable cause) {
+        super(cause);
+    }
+
     public UnAuthorizedException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

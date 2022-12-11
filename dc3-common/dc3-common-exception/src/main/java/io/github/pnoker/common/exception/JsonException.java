@@ -23,21 +23,14 @@ import cn.hutool.core.text.CharSequenceUtil;
  * @since 2022.1.0
  */
 public class JsonException extends RuntimeException {
-    /**
-     * 自定义异常
-     *
-     * @param cause Throwable
-     */
+    public JsonException() {
+        this(null);
+    }
+
     public JsonException(Throwable cause) {
         super(cause);
     }
 
-    /**
-     * 自定义文本内容
-     *
-     * @param template 文本模板，被替换的部分用 {} 表示，如果模板为null，返回"null"
-     * @param params   参数值
-     */
     public JsonException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

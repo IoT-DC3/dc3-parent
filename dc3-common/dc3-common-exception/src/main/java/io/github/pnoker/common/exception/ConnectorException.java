@@ -17,12 +17,20 @@ package io.github.pnoker.common.exception;
 import cn.hutool.core.text.CharSequenceUtil;
 
 /**
- * 自定义 连接器 异常
+ * 自定义连接异常
  *
  * @author pnoker
  * @since 2022.1.0
  */
 public class ConnectorException extends RuntimeException {
+    public ConnectorException() {
+        this(null);
+    }
+
+    public ConnectorException(Throwable cause) {
+        super(cause);
+    }
+
     public ConnectorException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

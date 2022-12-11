@@ -17,12 +17,20 @@ package io.github.pnoker.common.exception;
 import cn.hutool.core.text.CharSequenceUtil;
 
 /**
- * 自定义 Empty 异常
+ * 自定义空异常
  *
  * @author pnoker
  * @since 2022.1.0
  */
 public class EmptyException extends RuntimeException {
+    public EmptyException() {
+        this(null);
+    }
+
+    public EmptyException(Throwable cause) {
+        super(cause);
+    }
+
     public EmptyException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }

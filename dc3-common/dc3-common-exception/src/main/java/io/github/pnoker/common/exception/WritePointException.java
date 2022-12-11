@@ -23,6 +23,14 @@ import cn.hutool.core.text.CharSequenceUtil;
  * @since 2022.1.0
  */
 public class WritePointException extends RuntimeException {
+    public WritePointException() {
+        this(null);
+    }
+
+    public WritePointException(Throwable cause) {
+        super(cause);
+    }
+
     public WritePointException(CharSequence template, Object... params) {
         super(CharSequenceUtil.format(template, params));
     }
