@@ -420,7 +420,7 @@
             </dependency>
             <dependency>
                 <groupId>io.github.pnoker</groupId>
-                <artifactId>dc3-common-base</artifactId>
+                <artifactId>dc3-driver-sdk</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>

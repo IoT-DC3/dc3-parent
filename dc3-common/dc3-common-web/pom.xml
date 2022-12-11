@@ -65,6 +65,12 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
+        <!-- Jakarta Servlet -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+        </dependency>
+
         <!-- DC3 Common Exception -->
         <dependency>
             <groupId>io.github.pnoker</groupId>
@@ -75,6 +81,10 @@
         <dependency>
             <groupId>io.github.pnoker</groupId>
             <artifactId>dc3-common-public</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
         </dependency>
 
     </dependencies>
