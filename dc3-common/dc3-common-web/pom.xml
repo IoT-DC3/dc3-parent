@@ -65,6 +65,18 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
+        <!-- DC3 Common Exception -->
+        <dependency>
+            <groupId>io.github.pnoker</groupId>
+            <artifactId>dc3-common-exception</artifactId>
+        </dependency>
+
+        <!-- DC3 Common Public -->
+        <dependency>
+            <groupId>io.github.pnoker</groupId>
+            <artifactId>dc3-common-public</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
