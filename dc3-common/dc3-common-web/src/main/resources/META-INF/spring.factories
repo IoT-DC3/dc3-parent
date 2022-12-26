@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.github.pnoker.common.config.GlobalExceptionConfig,\
-  io.github.pnoker.common.config.WebMvcConfig
