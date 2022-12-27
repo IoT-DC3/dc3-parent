@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2022.1.7</version>
+    <version>2022.1.8</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -60,20 +60,20 @@
         <spring-cloud.version>2021.0.5</spring-cloud.version>
 
         <!-- DC3 Driver 相关 -->
-        <dc3.driver.sdk.version>2022.1.7</dc3.driver.sdk.version>
+        <dc3.driver.sdk.version>2022.1.8</dc3.driver.sdk.version>
 
         <!-- DC3 Common 相关 -->
-        <dc3.common.web.version>2022.1.7</dc3.common.web.version>
-        <dc3.common.feign.version>2022.1.7</dc3.common.feign.version>
-        <dc3.common.log.version>2022.1.7</dc3.common.log.version>
-        <dc3.common.mysql.version>2022.1.7</dc3.common.mysql.version>
-        <dc3.common.redis.version>2022.1.7</dc3.common.redis.version>
-        <dc3.common.thread.version>2022.1.7</dc3.common.thread.version>
-        <dc3.common.exception.version>2022.1.7</dc3.common.exception.version>
-        <dc3.common.public.version>2022.1.7</dc3.common.public.version>
-        <dc3.common.model.version>2022.1.7</dc3.common.model.version>
-        <dc3.common.constant.version>2022.1.7</dc3.common.constant.version>
-        <dc3.common.profiles.version>2022.1.7</dc3.common.profiles.version>
+        <dc3.common.web.version>2022.1.8</dc3.common.web.version>
+        <dc3.common.feign.version>2022.1.8</dc3.common.feign.version>
+        <dc3.common.log.version>2022.1.8</dc3.common.log.version>
+        <dc3.common.mysql.version>2022.1.8</dc3.common.mysql.version>
+        <dc3.common.redis.version>2022.1.8</dc3.common.redis.version>
+        <dc3.common.thread.version>2022.1.8</dc3.common.thread.version>
+        <dc3.common.exception.version>2022.1.8</dc3.common.exception.version>
+        <dc3.common.public.version>2022.1.8</dc3.common.public.version>
+        <dc3.common.model.version>2022.1.8</dc3.common.model.version>
+        <dc3.common.constant.version>2022.1.8</dc3.common.constant.version>
+        <dc3.common.profiles.version>2022.1.8</dc3.common.profiles.version>
 
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
@@ -160,18 +160,6 @@
             <artifactId>mapstruct</artifactId>
         </dependency>
 
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <!-- Lombok MapStruct Binding -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok-mapstruct-binding</artifactId>
-        </dependency>
-
     </dependencies>
 
     <dependencyManagement>
@@ -209,13 +197,11 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-core</artifactId>
                 <version>${mybatis.plus.version}</version>
-                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-extension</artifactId>
                 <version>${mybatis.plus.version}</version>
-                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -398,7 +384,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-driver-sdk</artifactId>
                 <version>${dc3.driver.sdk.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Web -->
@@ -406,7 +391,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-web</artifactId>
                 <version>${dc3.common.web.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common MySQL -->
@@ -414,7 +398,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-mysql</artifactId>
                 <version>${dc3.common.mysql.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Redis -->
@@ -422,7 +405,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-redis</artifactId>
                 <version>${dc3.common.redis.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Feign -->
@@ -430,7 +412,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-feign</artifactId>
                 <version>${dc3.common.feign.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Thread -->
@@ -438,7 +419,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-thread</artifactId>
                 <version>${dc3.common.thread.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Log -->
@@ -446,7 +426,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-log</artifactId>
                 <version>${dc3.common.log.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Public -->
@@ -454,7 +433,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-public</artifactId>
                 <version>${dc3.common.public.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Exception -->
@@ -462,7 +440,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-exception</artifactId>
                 <version>${dc3.common.exception.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Profiles -->
@@ -470,7 +447,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-profiles</artifactId>
                 <version>${dc3.common.profiles.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Model -->
@@ -478,7 +454,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-model</artifactId>
                 <version>${dc3.common.model.version}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- DC3 Common Constant -->
@@ -486,7 +461,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-constant</artifactId>
                 <version>${dc3.common.constant.version}</version>
-                <scope>compile</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -590,6 +564,11 @@
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
                             <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>${lombok-mapstruct-binding.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
