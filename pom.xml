@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2022.1.9</version>
+    <version>2022.2.0</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -60,25 +60,25 @@
         <spring-cloud.version>2021.0.5</spring-cloud.version>
 
         <!-- DC3 Driver 相关 -->
-        <dc3.driver.sdk.version>2022.1.9</dc3.driver.sdk.version>
+        <dc3.driver.sdk.version>2022.2.0</dc3.driver.sdk.version>
 
         <!-- DC3 Common 相关 -->
-        <dc3.common.web.version>2022.1.9</dc3.common.web.version>
-        <dc3.common.feign.version>2022.1.9</dc3.common.feign.version>
-        <dc3.common.log.version>2022.1.9</dc3.common.log.version>
-        <dc3.common.mysql.version>2022.1.9</dc3.common.mysql.version>
-        <dc3.common.redis.version>2022.1.9</dc3.common.redis.version>
-        <dc3.common.thread.version>2022.1.9</dc3.common.thread.version>
-        <dc3.common.exception.version>2022.1.9</dc3.common.exception.version>
-        <dc3.common.public.version>2022.1.9</dc3.common.public.version>
-        <dc3.common.model.version>2022.1.9</dc3.common.model.version>
-        <dc3.common.constant.version>2022.1.9</dc3.common.constant.version>
-        <dc3.common.profiles.version>2022.1.9</dc3.common.profiles.version>
+        <dc3.common.web.version>2022.2.0</dc3.common.web.version>
+        <dc3.common.feign.version>2022.2.0</dc3.common.feign.version>
+        <dc3.common.log.version>2022.2.0</dc3.common.log.version>
+        <dc3.common.mysql.version>2022.2.0</dc3.common.mysql.version>
+        <dc3.common.redis.version>2022.2.0</dc3.common.redis.version>
+        <dc3.common.thread.version>2022.2.0</dc3.common.thread.version>
+        <dc3.common.exception.version>2022.2.0</dc3.common.exception.version>
+        <dc3.common.public.version>2022.2.0</dc3.common.public.version>
+        <dc3.common.model.version>2022.2.0</dc3.common.model.version>
+        <dc3.common.constant.version>2022.2.0</dc3.common.constant.version>
+        <dc3.common.profiles.version>2022.2.0</dc3.common.profiles.version>
 
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <spring-data-mongodb.version>3.4.6</spring-data-mongodb.version>
-        <hibernate.validator.version>8.0.0.Final</hibernate.validator.version>
+        <hibernate.validator.version>6.2.5.Final</hibernate.validator.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
         <mybatis.plus.version>3.5.2</mybatis.plus.version>
         <jackson.version>2.14.1</jackson.version>
