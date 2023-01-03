@@ -678,6 +678,7 @@
                             <nonFilteredFileExtension>db</nonFilteredFileExtension>
                             <nonFilteredFileExtension>key</nonFilteredFileExtension>
                             <nonFilteredFileExtension>crt</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>p12</nonFilteredFileExtension>
                         </nonFilteredFileExtensions>
                     </configuration>
                 </plugin>
