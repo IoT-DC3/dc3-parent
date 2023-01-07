@@ -66,7 +66,7 @@
         <dc3.driver.sdk.version>2022.2.3</dc3.driver.sdk.version>
 
         <!-- DC3 Common 相关 -->
-        <dc3.common.version>2022.2.0</dc3.common.version>
+        <dc3.common.version>2022.2.3</dc3.common.version>
         <dc3.common.web.version>2022.2.3</dc3.common.web.version>
         <dc3.common.feign.version>2022.2.3</dc3.common.feign.version>
         <dc3.common.log.version>2022.2.3</dc3.common.log.version>
