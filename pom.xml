@@ -56,8 +56,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Spring 相关-->
-        <spring-boot.version>2.7.8</spring-boot.version>
-        <spring-cloud.version>2021.0.5</spring-cloud.version>
+        <spring-boot.version>2.7.9</spring-boot.version>
+        <spring-cloud.version>2021.0.6</spring-cloud.version>
 
         <!-- DC3 Center 相关 -->
         <dc3.center.register.client.version>2022.2.6</dc3.center.register.client.version>
@@ -86,7 +86,7 @@
         <spring-data-mongodb.version>3.4.6</spring-data-mongodb.version>
         <hibernate.validator.version>6.2.5.Final</hibernate.validator.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
-        <mybatis.plus.version>3.5.2</mybatis.plus.version>
+        <mybatis.plus.version>3.5.3</mybatis.plus.version>
         <jackson.version>2.14.1</jackson.version>
         <velocity.version>2.3</velocity.version>
         <jwt.version>0.9.1</jwt.version>
@@ -105,9 +105,9 @@
         <jakarta.version>2.1.1</jakarta.version>
         <mapstruct.version>1.5.3.Final</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-        <lombok.version>1.18.24</lombok.version>
+        <lombok.version>1.18.26</lombok.version>
         <guava.version>31.1-jre</guava.version>
-        <hutool.version>5.8.10</hutool.version>
+        <hutool.version>5.8.12</hutool.version>
 
         <!-- Plugin 相关 -->
         <maven.gpg.plugin>3.0.1</maven.gpg.plugin>
