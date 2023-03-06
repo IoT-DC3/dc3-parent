@@ -127,6 +127,7 @@
         <maven.javadoc.plugin>3.4.1</maven.javadoc.plugin>
         <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
         <maven.resource.plugin>3.1.0</maven.resource.plugin>
+        <maven.nexus.plugin.version>1.6.13</maven.nexus.plugin.version>
     </properties>
 
     <profiles>
@@ -704,6 +705,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+            </plugin>
         </plugins>
 
         <pluginManagement>
@@ -802,6 +807,17 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${maven.nexus.plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>pnoker</serverId>
+                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
                 </plugin>
                 <!-- 过滤文件 -->
                 <plugin>
