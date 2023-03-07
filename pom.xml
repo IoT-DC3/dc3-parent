@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.1.5</version>
+    <version>2023.1.6</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -60,37 +60,39 @@
         <spring.cloud.version>2021.0.6</spring.cloud.version>
 
         <!-- DC3 Center 相关 -->
-        <dc3.center.register.client.version>2023.1.5</dc3.center.register.client.version>
+        <dc3.center.register.eureka.client.version>2023.1.6</dc3.center.register.eureka.client.version>
+        <dc3.center.register.nacos.client.version>2023.1.6</dc3.center.register.nacos.client.version>
 
         <!-- DC3 Driver 相关 -->
-        <dc3.driver.sdk.version>2023.1.5</dc3.driver.sdk.version>
+        <dc3.driver.sdk.version>2023.1.6</dc3.driver.sdk.version>
 
         <!-- DC3 Common 相关 -->
-        <dc3.common.version>2023.1.5</dc3.common.version>
-        <dc3.common.web.version>2023.1.5</dc3.common.web.version>
-        <dc3.common.feign.version>2023.1.5</dc3.common.feign.version>
-        <dc3.common.mysql.version>2023.1.5</dc3.common.mysql.version>
-        <dc3.common.redis.version>2023.1.5</dc3.common.redis.version>
-        <dc3.common.mongo.version>2023.1.5</dc3.common.mongo.version>
-        <dc3.common.rabbitmq.version>2023.1.5</dc3.common.rabbitmq.version>
-        <dc3.common.quartz.version>2023.1.5</dc3.common.quartz.version>
-        <dc3.common.thread.version>2023.1.5</dc3.common.thread.version>
-        <dc3.common.model.version>2023.1.5</dc3.common.model.version>
-        <dc3.common.public.version>2023.1.5</dc3.common.public.version>
-        <dc3.common.constant.version>2023.1.5</dc3.common.constant.version>
-        <dc3.common.exception.version>2023.1.5</dc3.common.exception.version>
-        <dc3.common.log.version>2023.1.5</dc3.common.log.version>
-        <dc3.common.api.version>2023.1.5</dc3.common.api.version>
+        <dc3.common.version>2023.1.6</dc3.common.version>
+        <dc3.common.web.version>2023.1.6</dc3.common.web.version>
+        <dc3.common.feign.version>2023.1.6</dc3.common.feign.version>
+        <dc3.common.mysql.version>2023.1.6</dc3.common.mysql.version>
+        <dc3.common.redis.version>2023.1.6</dc3.common.redis.version>
+        <dc3.common.mongo.version>2023.1.6</dc3.common.mongo.version>
+        <dc3.common.rabbitmq.version>2023.1.6</dc3.common.rabbitmq.version>
+        <dc3.common.quartz.version>2023.1.6</dc3.common.quartz.version>
+        <dc3.common.thread.version>2023.1.6</dc3.common.thread.version>
+        <dc3.common.model.version>2023.1.6</dc3.common.model.version>
+        <dc3.common.public.version>2023.1.6</dc3.common.public.version>
+        <dc3.common.constant.version>2023.1.6</dc3.common.constant.version>
+        <dc3.common.exception.version>2023.1.6</dc3.common.exception.version>
+        <dc3.common.log.version>2023.1.6</dc3.common.log.version>
+        <dc3.common.api.version>2023.1.6</dc3.common.api.version>
 
         <!-- DC3 Api 相关 -->
-        <dc3.api.version>2023.1.5</dc3.api.version>
-        <dc3.api.auth.version>2023.1.5</dc3.api.auth.version>
-        <dc3.api.data.version>2023.1.5</dc3.api.data.version>
-        <dc3.api.manager.version>2023.1.5</dc3.api.manager.version>
+        <dc3.api.version>2023.1.6</dc3.api.version>
+        <dc3.api.auth.version>2023.1.6</dc3.api.auth.version>
+        <dc3.api.data.version>2023.1.6</dc3.api.data.version>
+        <dc3.api.manager.version>2023.1.6</dc3.api.manager.version>
 
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <spring-data-mongodb.version>3.4.6</spring-data-mongodb.version>
+        <spring.cloud.nacos.version>2021.0.4.0</spring.cloud.nacos.version>
         <hibernate.validator.version>6.2.5.Final</hibernate.validator.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
         <mybatis.plus.version>3.5.3</mybatis.plus.version>
@@ -457,11 +459,25 @@
                 <version>${hutool.version}</version>
             </dependency>
 
-            <!-- DC3 Center Register Client Starter -->
+            <!-- DC3 Center Register Eureka Client Starter -->
             <dependency>
                 <groupId>io.github.pnoker</groupId>
-                <artifactId>dc3-starter-center-register-client</artifactId>
-                <version>${dc3.center.register.client.version}</version>
+                <artifactId>dc3-starter-center-register-eureka-client</artifactId>
+                <version>${dc3.center.register.eureka.client.version}</version>
+            </dependency>
+
+            <!-- DC3 Center Register Nacos Client Starter -->
+            <dependency>
+                <groupId>io.github.pnoker</groupId>
+                <artifactId>dc3-starter-center-register-nacos-client</artifactId>
+                <version>${dc3.center.register.nacos.client.version}</version>
+            </dependency>
+
+            <!-- Spring Cloud Nacos Client -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring.cloud.nacos.version}</version>
             </dependency>
 
             <!-- DC3 Driver Sdk  -->
