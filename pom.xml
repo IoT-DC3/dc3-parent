@@ -74,6 +74,7 @@
         <dc3.common.redis.version>2023.1.9</dc3.common.redis.version>
         <dc3.common.mongo.version>2023.1.9</dc3.common.mongo.version>
         <dc3.common.rabbitmq.version>2023.1.9</dc3.common.rabbitmq.version>
+        <dc3.common.mqtt.version>2023.1.9</dc3.common.mqtt.version>
         <dc3.common.quartz.version>2023.1.9</dc3.common.quartz.version>
         <dc3.common.thread.version>2023.1.9</dc3.common.thread.version>
         <dc3.common.model.version>2023.1.9</dc3.common.model.version>
@@ -548,6 +549,13 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-rabbitmq</artifactId>
                 <version>${dc3.common.rabbitmq.version}</version>
+            </dependency>
+
+            <!-- DC3 Common Mqtt -->
+            <dependency>
+                <groupId>io.github.pnoker</groupId>
+                <artifactId>dc3-common-mqtt</artifactId>
+                <version>${dc3.common.mqtt.version}</version>
             </dependency>
 
             <!-- DC3 Common Quartz -->
