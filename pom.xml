@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.2.3</version>
+    <version>2023.2.4</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -105,7 +105,9 @@
         <jaxb.version>3.0.2</jaxb.version>
         <activation.version>1.1.1</activation.version>
         <milo.version>0.6.8</milo.version>
+        <influxdb.version>6.8.0</influxdb.version>
         <modbus.version>3.1.0</modbus.version>
+        <apache.poi.version>5.2.3</apache.poi.version>
         <netty.version>4.1.90.Final</netty.version>
         <grpc.version>1.53.0</grpc.version>
         <grpc.spring.boot.version>2.14.0.RELEASE</grpc.spring.boot.version>
@@ -431,11 +433,25 @@
                 <version>${paho.mqttv3.version}</version>
             </dependency>
 
+            <!-- Influxdb -->
+            <dependency>
+                <groupId>com.influxdb</groupId>
+                <artifactId>influxdb-client-java</artifactId>
+                <version>${influxdb.version}</version>
+            </dependency>
+
             <!-- File Upload -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${commons-fileupload.version}</version>
+            </dependency>
+
+            <!-- Apache Poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${apache.poi.version}</version>
             </dependency>
 
             <!-- MapStruct -->
