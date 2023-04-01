@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.2.4</version>
+    <version>3.2.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
