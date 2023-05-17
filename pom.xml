@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.4.0-SNAPSHOT</version>
+    <version>2023.4.0.1</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -64,7 +64,7 @@
         <dc3.center.register.nacos.client.version>2023.4.0</dc3.center.register.nacos.client.version>
 
         <!-- DC3 Driver 相关 -->
-        <dc3.driver.sdk.version>2023.4.0</dc3.driver.sdk.version>
+        <dc3.driver.sdk.version>2023.4.0.1</dc3.driver.sdk.version>
 
         <!-- DC3 Common 相关 -->
         <dc3.common.version>2023.4.0</dc3.common.version>
@@ -74,7 +74,7 @@
         <dc3.common.redis.version>2023.4.0</dc3.common.redis.version>
         <dc3.common.mongo.version>2023.4.0</dc3.common.mongo.version>
         <dc3.common.rabbitmq.version>2023.4.0</dc3.common.rabbitmq.version>
-        <dc3.common.mqtt.version>2023.4.0</dc3.common.mqtt.version>
+        <dc3.common.mqtt.version>2023.4.0.1</dc3.common.mqtt.version>
         <dc3.common.quartz.version>2023.4.0</dc3.common.quartz.version>
         <dc3.common.thread.version>2023.4.0</dc3.common.thread.version>
         <dc3.common.model.version>2023.4.0</dc3.common.model.version>
