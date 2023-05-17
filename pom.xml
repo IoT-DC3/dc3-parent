@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.4.0.1</version>
+    <version>2023.4.0.2</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -56,12 +56,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Spring 相关-->
-        <spring.boot.version>2.7.10</spring.boot.version>
-        <spring.cloud.version>2021.0.6</spring.cloud.version>
+        <spring.boot.version>2.7.11</spring.boot.version>
+        <spring.cloud.version>2021.0.7</spring.cloud.version>
 
         <!-- DC3 Center 相关 -->
         <dc3.center.register.eureka.client.version>2023.4.0</dc3.center.register.eureka.client.version>
-        <dc3.center.register.nacos.client.version>2023.4.0</dc3.center.register.nacos.client.version>
+        <dc3.center.register.nacos.client.version>2023.4.0.1</dc3.center.register.nacos.client.version>
 
         <!-- DC3 Driver 相关 -->
         <dc3.driver.sdk.version>2023.4.0.1</dc3.driver.sdk.version>
@@ -93,7 +93,7 @@
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <spring-data-mongodb.version>3.4.10</spring-data-mongodb.version>
-        <spring.cloud.nacos.version>2021.0.4.0</spring.cloud.nacos.version>
+        <spring.cloud.nacos.version>2021.0.5.0</spring.cloud.nacos.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
         <commons.io.version>2.11.0</commons.io.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
