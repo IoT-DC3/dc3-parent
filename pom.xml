@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.4.0.2</version>
+    <version>2023.4.0.3</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -74,7 +74,7 @@
         <dc3.common.redis.version>2023.4.0</dc3.common.redis.version>
         <dc3.common.mongo.version>2023.4.0</dc3.common.mongo.version>
         <dc3.common.rabbitmq.version>2023.4.0</dc3.common.rabbitmq.version>
-        <dc3.common.mqtt.version>2023.4.0.1</dc3.common.mqtt.version>
+        <dc3.common.mqtt.version>2023.4.0.2</dc3.common.mqtt.version>
         <dc3.common.quartz.version>2023.4.0</dc3.common.quartz.version>
         <dc3.common.thread.version>2023.4.0</dc3.common.thread.version>
         <dc3.common.model.version>2023.4.0</dc3.common.model.version>
@@ -83,6 +83,7 @@
         <dc3.common.exception.version>2023.4.0</dc3.common.exception.version>
         <dc3.common.log.version>2023.4.0</dc3.common.log.version>
         <dc3.common.api.version>2023.4.0</dc3.common.api.version>
+        <dc3.common.auth.version>2023.4.0.1</dc3.common.auth.version>
 
         <!-- DC3 Api 相关 -->
         <dc3.api.version>2023.4.0</dc3.api.version>
@@ -657,7 +658,7 @@
             <dependency>
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-auth</artifactId>
-                <version>${dc3.common.api.version}</version>
+                <version>${dc3.common.auth.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
