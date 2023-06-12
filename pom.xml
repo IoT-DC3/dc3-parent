@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.4.3</version>
+    <version>2023.4.4</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -60,35 +60,37 @@
         <spring.cloud.version>2021.0.7</spring.cloud.version>
 
         <!-- DC3 Center 相关 -->
-        <dc3.center.register.nacos.client.version>2023.4.3</dc3.center.register.nacos.client.version>
+        <dc3.center.register.nacos.client.version>2023.4.4</dc3.center.register.nacos.client.version>
 
         <!-- DC3 Driver 相关 -->
-        <dc3.driver.sdk.version>2023.4.3</dc3.driver.sdk.version>
+        <dc3.driver.sdk.version>2023.4.4</dc3.driver.sdk.version>
 
         <!-- DC3 Common 相关 -->
-        <dc3.common.version>2023.4.3</dc3.common.version>
-        <dc3.common.web.version>2023.4.3</dc3.common.web.version>
-        <dc3.common.feign.version>2023.4.3</dc3.common.feign.version>
-        <dc3.common.mysql.version>2023.4.3</dc3.common.mysql.version>
-        <dc3.common.redis.version>2023.4.3</dc3.common.redis.version>
-        <dc3.common.mongo.version>2023.4.3</dc3.common.mongo.version>
-        <dc3.common.rabbitmq.version>2023.4.3</dc3.common.rabbitmq.version>
-        <dc3.common.mqtt.version>2023.4.3</dc3.common.mqtt.version>
-        <dc3.common.quartz.version>2023.4.3</dc3.common.quartz.version>
-        <dc3.common.thread.version>2023.4.3</dc3.common.thread.version>
-        <dc3.common.model.version>2023.4.3</dc3.common.model.version>
-        <dc3.common.public.version>2023.4.3</dc3.common.public.version>
-        <dc3.common.constant.version>2023.4.3</dc3.common.constant.version>
-        <dc3.common.exception.version>2023.4.3</dc3.common.exception.version>
-        <dc3.common.log.version>2023.4.3</dc3.common.log.version>
-        <dc3.common.api.version>2023.4.3</dc3.common.api.version>
-        <dc3.common.auth.version>2023.4.3</dc3.common.auth.version>
+        <dc3.common.version>2023.4.4</dc3.common.version>
+        <dc3.common.web.version>2023.4.4</dc3.common.web.version>
+        <dc3.common.feign.version>2023.4.4</dc3.common.feign.version>
+        <dc3.common.mysql.version>2023.4.4</dc3.common.mysql.version>
+        <dc3.common.redis.version>2023.4.4</dc3.common.redis.version>
+        <dc3.common.mongo.version>2023.4.4</dc3.common.mongo.version>
+        <dc3.common.influx.version>2023.4.4</dc3.common.influx.version>
+        <dc3.common.tdengine.version>2023.4.4</dc3.common.tdengine.version>
+        <dc3.common.rabbitmq.version>2023.4.4</dc3.common.rabbitmq.version>
+        <dc3.common.mqtt.version>2023.4.4</dc3.common.mqtt.version>
+        <dc3.common.quartz.version>2023.4.4</dc3.common.quartz.version>
+        <dc3.common.thread.version>2023.4.4</dc3.common.thread.version>
+        <dc3.common.model.version>2023.4.4</dc3.common.model.version>
+        <dc3.common.public.version>2023.4.4</dc3.common.public.version>
+        <dc3.common.constant.version>2023.4.4</dc3.common.constant.version>
+        <dc3.common.exception.version>2023.4.4</dc3.common.exception.version>
+        <dc3.common.log.version>2023.4.4</dc3.common.log.version>
+        <dc3.common.api.version>2023.4.4</dc3.common.api.version>
+        <dc3.common.auth.version>2023.4.4</dc3.common.auth.version>
 
         <!-- DC3 Api 相关 -->
-        <dc3.api.version>2023.4.3</dc3.api.version>
-        <dc3.api.auth.version>2023.4.3</dc3.api.auth.version>
-        <dc3.api.data.version>2023.4.3</dc3.api.data.version>
-        <dc3.api.manager.version>2023.4.3</dc3.api.manager.version>
+        <dc3.api.version>2023.4.4</dc3.api.version>
+        <dc3.api.auth.version>2023.4.4</dc3.api.auth.version>
+        <dc3.api.data.version>2023.4.4</dc3.api.data.version>
+        <dc3.api.manager.version>2023.4.4</dc3.api.manager.version>
 
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
@@ -99,6 +101,7 @@
         <commons.lang3.version>3.12.0</commons.lang3.version>
         <snakeyaml.version>2.0</snakeyaml.version>
         <mybatis.plus.version>3.5.3.1</mybatis.plus.version>
+        <mybatis.dynamic.version>3.6.1</mybatis.dynamic.version>
         <jackson.version>2.14.2</jackson.version>
         <velocity.version>2.3</velocity.version>
         <jwt.version>0.9.1</jwt.version>
@@ -109,6 +112,7 @@
         <activation.version>1.1.1</activation.version>
         <milo.version>0.6.8</milo.version>
         <influxdb.version>6.8.0</influxdb.version>
+        <tdengine.version>3.2.2</tdengine.version>
         <modbus.version>3.1.0</modbus.version>
         <apache.poi.version>5.2.3</apache.poi.version>
         <netty.version>4.1.90.Final</netty.version>
@@ -235,6 +239,11 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${mybatis.dynamic.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -450,6 +459,13 @@
                 <version>${influxdb.version}</version>
             </dependency>
 
+            <!-- TDEngine -->
+            <dependency>
+                <groupId>com.taosdata.jdbc</groupId>
+                <artifactId>taos-jdbcdriver</artifactId>
+                <version>${tdengine.version}</version>
+            </dependency>
+
             <!-- Commons IO -->
             <dependency>
                 <groupId>commons-io</groupId>
@@ -577,6 +593,20 @@
                 <version>${dc3.common.mongo.version}</version>
             </dependency>
 
+            <!-- DC3 Common Influx -->
+            <dependency>
+                <groupId>io.github.pnoker</groupId>
+                <artifactId>dc3-common-influx</artifactId>
+                <version>${dc3.common.influx.version}</version>
+            </dependency>
+
+            <!-- DC3 Common TDEngine -->
+            <dependency>
+                <groupId>io.github.pnoker</groupId>
+                <artifactId>dc3-common-tdengine</artifactId>
+                <version>${dc3.common.tdengine.version}</version>
+            </dependency>
+
             <!-- DC3 Common RabbitMQ -->
             <dependency>
                 <groupId>io.github.pnoker</groupId>
@@ -595,7 +625,7 @@
             <dependency>
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-quartz</artifactId>
-                <version>${dc3.common.thread.version}</version>
+                <version>${dc3.common.quartz.version}</version>
             </dependency>
 
             <!-- DC3 Common Thread -->
