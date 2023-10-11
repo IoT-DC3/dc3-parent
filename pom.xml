@@ -97,7 +97,6 @@
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <spring-data-mongodb.version>3.4.10</spring-data-mongodb.version>
         <knife.version>4.3.0</knife.version>
-        <spring.cloud.nacos.version>2021.0.5.0</spring.cloud.nacos.version>
         <commons-fileupload.version>1.5</commons-fileupload.version>
         <commons.io.version>2.11.0</commons.io.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
@@ -558,13 +557,6 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-starter-center-register-nacos-client</artifactId>
                 <version>${dc3.center.register.nacos.client.version}</version>
-            </dependency>
-
-            <!-- Spring Cloud Nacos Client -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-                <version>${spring.cloud.nacos.version}</version>
             </dependency>
 
             <!-- DC3 Driver Sdk  -->
