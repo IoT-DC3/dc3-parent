@@ -19,7 +19,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2023.4.5.3</version>
+    <version>2023.4.5.4</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2022</inceptionYear>
@@ -77,6 +77,7 @@
         <dc3.common.tdengine.version>2023.4.5</dc3.common.tdengine.version>
         <dc3.common.rabbitmq.version>2023.4.5</dc3.common.rabbitmq.version>
         <dc3.common.mqtt.version>2023.4.5</dc3.common.mqtt.version>
+        <dc3.common.register.version>2023.4.5</dc3.common.register.version>
         <dc3.common.quartz.version>2023.4.5</dc3.common.quartz.version>
         <dc3.common.thread.version>2023.4.5</dc3.common.thread.version>
         <dc3.common.model.version>2023.4.5</dc3.common.model.version>
@@ -639,6 +640,13 @@
                 <groupId>io.github.pnoker</groupId>
                 <artifactId>dc3-common-mqtt</artifactId>
                 <version>${dc3.common.mqtt.version}</version>
+            </dependency>
+
+            <!-- DC3 Common Register -->
+            <dependency>
+                <groupId>io.github.pnoker</groupId>
+                <artifactId>dc3-common-register</artifactId>
+                <version>${dc3.common.register.version}</version>
             </dependency>
 
             <!-- DC3 Common Quartz -->
