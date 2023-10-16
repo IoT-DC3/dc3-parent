@@ -57,7 +57,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Spring 相关-->
-        <spring.boot.version>2.7.14</spring.boot.version>
+        <spring.boot.version>2.7.16</spring.boot.version>
         <spring.cloud.version>2021.0.8</spring.cloud.version>
 
         <!-- DC3 Driver 相关 -->
@@ -107,7 +107,6 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <lombok.version>1.18.30</lombok.version>
-        <slf4j.version>2.0.9</slf4j.version>
         <guava.version>32.1.1-jre</guava.version>
         <hutool.version>5.8.22</hutool.version>
 
@@ -131,9 +130,9 @@
         <tdengine.version>3.2.2</tdengine.version>
         <modbus.version>3.1.0</modbus.version>
         <apache.poi.version>5.2.3</apache.poi.version>
-        <netty.version>4.1.96.Final</netty.version>
+        <netty.version>4.1.100.Final</netty.version>
         <j.interop.version>2.0.4</j.interop.version>
-        <bouncycastle.version>1.46</bouncycastle.version>
+        <bouncycastle.version>1.76</bouncycastle.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
         <jakarta.version>2.1.1</jakarta.version>
 
@@ -204,9 +203,11 @@
         </dependency>
 
         <!-- Slf4j Api -->
+        <!-- 此版本请勿配置或升级，否则日志启动会报错 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- MapStruct -->
@@ -317,12 +318,14 @@
                 <version>${jwt.version}</version>
             </dependency>
 
-            <!-- Oshi & Jna -->
+            <!-- Operating System and Hardware Information -->
             <dependency>
                 <groupId>com.github.oshi</groupId>
                 <artifactId>oshi-core</artifactId>
                 <version>${oshi.version}</version>
             </dependency>
+
+            <!-- Java Native Access 相关 -->
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna</artifactId>
@@ -334,7 +337,7 @@
                 <version>${jna.version}</version>
             </dependency>
 
-            <!-- Jaxb Api -->
+            <!-- Java XML 相关 -->
             <dependency>
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
@@ -350,6 +353,8 @@
                 <artifactId>jaxb-core</artifactId>
                 <version>${jaxb.version}</version>
             </dependency>
+
+            <!-- Java Mail 相关 -->
             <dependency>
                 <groupId>javax.activation</groupId>
                 <artifactId>activation</artifactId>
@@ -363,25 +368,18 @@
                 <version>${hibernate.validator.version}</version>
             </dependency>
 
-            <!-- Snake Yaml -->
+            <!-- Java Yaml 相关 -->
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>${snakeyaml.version}</version>
             </dependency>
 
-            <!-- Eclipse Milo SDK Client -->
+            <!-- OPC UA 相关 -->
             <dependency>
                 <groupId>org.eclipse.milo</groupId>
                 <artifactId>sdk-client</artifactId>
                 <version>${milo.version}</version>
-            </dependency>
-
-            <!-- Modbus -->
-            <dependency>
-                <groupId>com.infiniteautomation</groupId>
-                <artifactId>modbus4j</artifactId>
-                <version>${modbus.version}</version>
             </dependency>
 
             <!-- Netty -->
@@ -442,17 +440,17 @@
                 <version>${grpc.spring.boot.version}</version>
             </dependency>
 
-            <!-- Java Interop 相关 -->
+            <!-- Java COM 相关 -->
             <dependency>
                 <groupId>org.jinterop</groupId>
                 <artifactId>j-interop</artifactId>
                 <version>${j.interop.version}</version>
             </dependency>
 
-            <!-- Tls Cert 相关 -->
+            <!-- Bouncy Castle 相关 -->
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk16</artifactId>
+                <artifactId>bcprov-jdk18on</artifactId>
                 <version>${bouncycastle.version}</version>
             </dependency>
 
@@ -462,6 +460,8 @@
                 <artifactId>elasticsearch-java</artifactId>
                 <version>${elasticsearch.version}</version>
             </dependency>
+
+            <!-- Jakarta JSON 相关 -->
             <dependency>
                 <groupId>jakarta.json</groupId>
                 <artifactId>jakarta.json-api</artifactId>
@@ -520,14 +520,6 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${apache.poi.version}</version>
-            </dependency>
-
-            <!-- Slf4j Api -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <!-- MapStruct -->
