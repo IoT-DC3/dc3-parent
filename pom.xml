@@ -115,6 +115,7 @@
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <knife.version>4.3.0</knife.version>
+        <swagger.version>2.2.9</swagger.version>
         <spring.cloud.nacos.version>2021.0.5.0</spring.cloud.nacos.version>
         <commons-fileupload.version>1.5</commons-fileupload.version>
         <commons.io.version>2.11.0</commons.io.version>
@@ -298,7 +299,25 @@
                 <version>${knife.version}</version>
             </dependency>
 
-            <!-- Jackson -->
+            <!-- Swagger Annotations -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <!-- Jackson 相关 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
