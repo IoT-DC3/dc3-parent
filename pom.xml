@@ -24,7 +24,7 @@
     <version>2023.4.5.5</version>
     <packaging>pom</packaging>
 
-    <inceptionYear>2016-2022</inceptionYear>
+    <inceptionYear>2016-2023</inceptionYear>
     <url>https://github.com/pnoker/iot-dc3</url>
     <description>
         IOT DC3 平台 父级 Maven Pom 配置。
@@ -117,6 +117,7 @@
         <knife.version>4.3.0</knife.version>
         <swagger.version>2.2.9</swagger.version>
         <spring.cloud.nacos.version>2021.0.5.0</spring.cloud.nacos.version>
+        <micrometer.version>1.12.0</micrometer.version>
         <commons-fileupload.version>1.5</commons-fileupload.version>
         <commons.io.version>2.11.0</commons.io.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
@@ -460,6 +461,20 @@
                 <version>${grpc.spring.boot.version}</version>
             </dependency>
 
+            <!-- Spring Cloud Nacos Client -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring.cloud.nacos.version}</version>
+            </dependency>
+
+            <!-- Micrometer Registry Prometheus -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>${micrometer.version}</version>
+            </dependency>
+
             <!-- Java COM 相关 -->
             <dependency>
                 <groupId>org.jinterop</groupId>
@@ -578,13 +593,6 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
-            </dependency>
-
-            <!-- Spring Cloud Nacos Client -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-                <version>${spring.cloud.nacos.version}</version>
             </dependency>
 
             <!-- DC3 Driver Sdk  -->
