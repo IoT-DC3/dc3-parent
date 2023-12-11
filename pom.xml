@@ -62,9 +62,6 @@
         <spring.boot.version>2.7.16</spring.boot.version>
         <spring.cloud.version>2021.0.8</spring.cloud.version>
 
-        <!-- DC3 Driver 相关 -->
-        <dc3.driver.sdk.version>2023.4.5</dc3.driver.sdk.version>
-
         <!-- DC3 Common 相关 -->
         <dc3.common.version>2023.4.5</dc3.common.version>
         <dc3.common.web.version>2023.4.5</dc3.common.web.version>
@@ -593,13 +590,6 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
-            </dependency>
-
-            <!-- DC3 Driver Sdk  -->
-            <dependency>
-                <groupId>io.github.pnoker</groupId>
-                <artifactId>dc3-driver-sdk</artifactId>
-                <version>${dc3.driver.sdk.version}</version>
             </dependency>
 
             <!-- DC3 Common -->
