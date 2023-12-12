@@ -59,7 +59,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Spring 相关-->
-        <spring.boot.version>2.7.16</spring.boot.version>
+        <spring.boot.version>2.7.18</spring.boot.version>
         <spring.cloud.version>2021.0.8</spring.cloud.version>
 
         <!-- DC3 Common 相关 -->
