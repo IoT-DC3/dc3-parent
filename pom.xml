@@ -143,7 +143,7 @@
         <!-- Plugin 相关 -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
-        <maven.gpg.plugin>3.0.1</maven.gpg.plugin>
+        <maven.gpg.plugin>3.1.0</maven.gpg.plugin>
         <maven.source.plugin>3.3.0</maven.source.plugin>
         <maven.javadoc.plugin>3.6.3</maven.javadoc.plugin>
         <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
