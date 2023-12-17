@@ -106,8 +106,8 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <lombok.version>1.18.30</lombok.version>
-        <guava.version>32.1.1-jre</guava.version>
-        <hutool.version>5.8.22</hutool.version>
+        <guava.version>32.1.3-jre</guava.version>
+        <hutool.version>5.8.23</hutool.version>
 
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
@@ -128,7 +128,7 @@
         <jaxb.version>3.0.2</jaxb.version>
         <activation.version>1.1.1</activation.version>
         <milo.version>0.6.8</milo.version>
-        <tdengine.version>3.2.2</tdengine.version>
+        <tdengine.version>3.2.7</tdengine.version>
         <modbus.version>3.1.0</modbus.version>
         <apache.poi.version>5.2.3</apache.poi.version>
         <netty.version>4.1.100.Final</netty.version>
@@ -142,6 +142,7 @@
 
         <!-- Plugin 相关 -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
+        <codehaus.mojo.version>2.8.1</codehaus.mojo.version>
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
         <maven.gpg.plugin>3.1.0</maven.gpg.plugin>
         <maven.source.plugin>3.3.0</maven.source.plugin>
@@ -977,6 +978,13 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+
+                <!-- Versions 插件 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${codehaus.mojo.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
