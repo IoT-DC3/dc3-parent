@@ -149,6 +149,7 @@
         <maven.javadoc.plugin>3.6.3</maven.javadoc.plugin>
         <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
         <maven.resource.plugin>3.3.1</maven.resource.plugin>
+        <maven.dependency.plugin>3.6.1</maven.dependency.plugin>
         <maven.nexus.plugin.version>1.6.13</maven.nexus.plugin.version>
     </properties>
 
@@ -821,6 +822,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
         </plugins>
 
         <pluginManagement>
@@ -985,6 +990,13 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${codehaus.mojo.version}</version>
+                </plugin>
+
+                <!-- Maven 依赖 插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven.dependency.plugin}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
