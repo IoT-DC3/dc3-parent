@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.1.0.2</version>
+    <version>2024.1.0.3</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2023</inceptionYear>
@@ -88,6 +88,7 @@
         <spring.cloud.nacos.version>2021.0.5.0</spring.cloud.nacos.version>
         <nacos.client.version>2.3.0</nacos.client.version>
         <micrometer.version>1.12.0</micrometer.version>
+        <xxl.job.version>2.4.0</xxl.job.version>
         <commons-fileupload.version>1.5</commons-fileupload.version>
         <commons.io.version>2.11.0</commons.io.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
@@ -466,6 +467,14 @@
                 <artifactId>micrometer-registry-prometheus</artifactId>
                 <version>${micrometer.version}</version>
             </dependency>
+
+            <!-- XXL JOB -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl.job.version}</version>
+            </dependency>
+
 
             <!-- Java COM 相关 -->
             <dependency>
