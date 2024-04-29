@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.1.1.2</version>
+    <version>2024.1.1.3</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2023</inceptionYear>
@@ -62,10 +62,13 @@
         <spring.boot.version>2.7.18</spring.boot.version>
         <spring.cloud.version>2021.0.9</spring.cloud.version>
 
-        <!-- gRpc 相关 -->
-        <grpc.version>1.62.2</grpc.version>
+        <!--
+        gRpc 相关
+        2024.04.29 更新
+         -->
+        <grpc.version>1.63.0</grpc.version>
         <protobuf.version>3.25.3</protobuf.version>
-        <grpc.spring.boot.version>2.15.0.RELEASE</grpc.spring.boot.version>
+        <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!-- 数据库 相关 -->
         <mongodb.version>4.2.5</mongodb.version>
@@ -83,10 +86,15 @@
         <!-- 通用工具 -->
         <jwt.version>0.12.5</jwt.version>
         <okhttp.version>4.12.0</okhttp.version>
-        <netty.version>4.1.108.Final</netty.version>
+        <netty.version>4.1.109.Final</netty.version>
         <commons.io.version>2.16.1</commons.io.version>
         <commons.lang3.version>3.14.0</commons.lang3.version>
         <commons-fileupload.version>1.5</commons-fileupload.version>
+        <jakarta.json.version>2.1.3</jakarta.json.version>
+        <javax.annotation.version>1.3.2</javax.annotation.version>
+        <jakarta.validation.version>3.0.2</jakarta.validation.version>
+        <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
+        <hibernate.validator.version>8.0.1.Final</hibernate.validator.version>
         <lombok.version>1.18.32</lombok.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
@@ -102,23 +110,16 @@
         <apache.poi.version>5.2.5</apache.poi.version>
         <activation.version>1.1.1</activation.version>
         <xxl.job.version>2.4.0</xxl.job.version>
-        <jna.version>5.13.0</jna.version>
-        <oshi.version>6.4.1</oshi.version>
-        <milo.version>0.6.8</milo.version>
+        <jna.version>5.14.0</jna.version>
+        <oshi.version>6.6.0</oshi.version>
+        <milo.version>0.6.12</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
-        <bouncycastle.version>1.76</bouncycastle.version>
-        <j.interop.version>2.0.4</j.interop.version>
-        <jakarta.version>2.1.1</jakarta.version>
-        <jackson.version>2.16.1</jackson.version>
+        <bouncycastle.version>1.78.1</bouncycastle.version>
+        <j.interop.version>3.0.0</j.interop.version>
+        <jackson.version>2.17.0</jackson.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
         <jaxb.version>3.0.2</jaxb.version>
-        <snakeyaml.version>2.0</snakeyaml.version>
-
-        <!-- 兼容性 相关 -->
-        <annotation.version>1.3.2</annotation.version>
-
-        <!-- 特殊版本 -->
-        <hibernate.validator.version>6.2.5.Final</hibernate.validator.version>
+        <snakeyaml.version>2.2</snakeyaml.version>
 
         <!-- Plugin 相关 -->
         <codehaus.mojo.version>2.16.2</codehaus.mojo.version>
@@ -186,13 +187,22 @@
         </dependency>
 
         <!-- Slf4j Api -->
-        <!-- 此版本请勿配置或升级，否则日志启动会报错 -->
+        <!-- 此版本请勿配置或升级, 否则日志启动会报错 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
-        <!-- Annotation Api -->
+        <!-- Jakarta Annotation Api -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+
+        <!--
+        Javax Annotation Api
+        注意：当升级到springboot3时需要替换为jakarta.annotation-api
+        -->
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
@@ -535,25 +545,41 @@
                 <version>${paho.mqttv3.version}</version>
             </dependency>
 
-            <!-- Bouncy Castle 相关 -->
+            <!--
+            Bouncy Castle Provider
+            用于提供 Java 密码学的相关功能
+            是一个流行的开源密码库, 提供了许多密码学相关的算法和功能, 如对称加密算法、非对称加密算法、哈希函数、数字签名、证书生成等
+            -->
             <dependency>
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcprov-jdk18on</artifactId>
                 <version>${bouncycastle.version}</version>
             </dependency>
 
-            <!-- Java COM 相关 -->
+            <!--
+            Java COM 相关, 用于与 Microsoft Windows 平台上运行的 DCOM (Distributed Component Object Model) 服务进行通信
+            DCOM (Distributed Component Object Model)  是 Microsoft 开发的一种远程过程调用 (RPC) 技术, 用于在 Windows 系统上实现跨网络的组件间通信
+            -->
             <dependency>
                 <groupId>org.jinterop</groupId>
                 <artifactId>j-interop</artifactId>
                 <version>${j.interop.version}</version>
             </dependency>
 
-            <!-- Jakarta Json 相关 -->
+            <!--
+            Jakarta 相关
+            - 用于处理 JSON（JavaScript Object Notation）数据的标准 API
+            - 用于数据验证和约束验证的标准 API
+            -->
             <dependency>
                 <groupId>jakarta.json</groupId>
                 <artifactId>jakarta.json-api</artifactId>
-                <version>${jakarta.version}</version>
+                <version>${jakarta.json.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation.version}</version>
             </dependency>
 
             <!-- Jackson 相关 -->
@@ -593,7 +619,12 @@
                 <version>${jackson.version}</version>
             </dependency>
 
-            <!-- XML 相关 -->
+            <!--
+            JAXB（Java Architecture for XML Binding）API 相关
+            - 用于将 XML 数据与 Java 对象进行相互转换的 API
+            - 用于运行时执行 XML 数据的绑定操作
+            - 用于支持 XML 数据的绑定操作
+            -->
             <dependency>
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
@@ -610,24 +641,42 @@
                 <version>${jaxb.version}</version>
             </dependency>
 
-            <!-- Java Yaml 相关 -->
+            <!--
+            Java Yaml 相关
+            SnakeYAML 是一个 Java 库，用于解析和生成 YAML（YAML Ain't Markup Language）格式的数据
+            -->
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>${snakeyaml.version}</version>
             </dependency>
 
-            <!-- Annotation Api -->
+            <!-- Jakarta Annotation Api -->
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${jakarta.annotation.version}</version>
+            </dependency>
+
+            <!-- Javax Annotation Api -->
             <dependency>
                 <groupId>javax.annotation</groupId>
                 <artifactId>javax.annotation-api</artifactId>
-                <version>${annotation.version}</version>
+                <version>${javax.annotation.version}</version>
             </dependency>
 
-            <!-- Hibernate Validator -->
+            <!--
+            Hibernate Validator
+            Hibernate Validator 是一个 Java Bean 验证框架，用于在 Java 应用程序中进行数据验证和约束验证
+            -->
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-cdi</artifactId>
                 <version>${hibernate.validator.version}</version>
             </dependency>
 
