@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.1.1.4</version>
+    <version>2024.1.2</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2023</inceptionYear>
@@ -58,26 +58,27 @@
         <maven.plugin.validation>VERBOSE</maven.plugin.validation>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Spring 相关-->
-        <spring.boot.version>3.0.13</spring.boot.version>
-        <spring.cloud.version>2022.0.5</spring.cloud.version>
+        <!--
+        Spring 相关
+        2024.04.30 更新, 全部为最新
+        -->
+        <spring.boot.version>3.2.5</spring.boot.version>
+        <spring.cloud.version>2023.0.1</spring.cloud.version>
 
         <!--
         gRpc 相关
-        2024.04.29 更新
+        2024.04.29 更新, 仅 protobuf.version 无法使用最新版本
          -->
         <grpc.version>1.63.0</grpc.version>
         <protobuf.version>3.25.3</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!-- 数据库 相关 -->
-        <mongodb.version>4.2.5</mongodb.version>
         <tdengine.version>3.2.9</tdengine.version>
         <influxdb.version>6.12.0</influxdb.version>
         <elasticsearch.version>8.13.2</elasticsearch.version>
         <mybatis.plus.version>3.5.6</mybatis.plus.version>
         <mybatis.dynamic.version>4.3.0</mybatis.dynamic.version>
-        <spring.data.commons.version>3.2.5</spring.data.commons.version>
 
         <!-- 接口文档 相关 -->
         <knife.version>4.5.0</knife.version>
@@ -88,8 +89,6 @@
         <okhttp.version>4.12.0</okhttp.version>
         <netty.version>4.1.109.Final</netty.version>
         <commons.io.version>2.16.1</commons.io.version>
-        <commons.lang3.version>3.14.0</commons.lang3.version>
-        <commons-fileupload.version>1.5</commons-fileupload.version>
         <jakarta.json.version>2.1.3</jakarta.json.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
         <jakarta.validation.version>3.0.2</jakarta.validation.version>
@@ -108,7 +107,7 @@
         <micrometer.version>1.12.0</micrometer.version>
         <velocity.version>2.3</velocity.version>
         <apache.poi.version>5.2.5</apache.poi.version>
-        <activation.version>1.1.1</activation.version>
+        <activation.version>2.1.3</activation.version>
         <xxl.job.version>2.4.0</xxl.job.version>
         <jna.version>5.14.0</jna.version>
         <oshi.version>6.6.0</oshi.version>
@@ -121,11 +120,14 @@
         <jaxb.version>3.0.2</jaxb.version>
         <snakeyaml.version>2.2</snakeyaml.version>
 
-        <!-- Plugin 相关 -->
+        <!-- 
+        Plugin 相关
+        2024.04.30 更新, 全部为最新
+         -->
         <codehaus.mojo.version>2.16.2</codehaus.mojo.version>
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
-        <maven.gpg.plugin>3.2.3</maven.gpg.plugin>
+        <maven.gpg.plugin>3.2.4</maven.gpg.plugin>
         <maven.source.plugin>3.3.1</maven.source.plugin>
         <maven.javadoc.plugin>3.6.3</maven.javadoc.plugin>
         <maven.compiler.plugin>3.13.0</maven.compiler.plugin>
@@ -197,15 +199,6 @@
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
-        </dependency>
-
-        <!--
-        Javax Annotation Api
-        注意：当升级到springboot3时需要替换为jakarta.annotation-api
-        -->
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
         </dependency>
 
         <!-- Lombok -->
@@ -401,20 +394,6 @@
                 <version>${commons.io.version}</version>
             </dependency>
 
-            <!-- Commons Lang3 -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${commons.lang3.version}</version>
-            </dependency>
-
-            <!-- Commons File Upload -->
-            <dependency>
-                <groupId>commons-fileupload</groupId>
-                <artifactId>commons-fileupload</artifactId>
-                <version>${commons-fileupload.version}</version>
-            </dependency>
-
             <!-- Lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -498,10 +477,12 @@
                 <version>${apache.poi.version}</version>
             </dependency>
 
-            <!-- Java Mail 相关 -->
+            <!--
+             Jakarta Activation API 是用于激活各种 MIME 类型的 Java API
+             -->
             <dependency>
-                <groupId>javax.activation</groupId>
-                <artifactId>activation</artifactId>
+                <groupId>jakarta.activation</groupId>
+                <artifactId>jakarta.activation-api</artifactId>
                 <version>${activation.version}</version>
             </dependency>
 
@@ -542,6 +523,11 @@
             <dependency>
                 <groupId>org.eclipse.paho</groupId>
                 <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+                <version>${paho.mqttv3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.paho</groupId>
+                <artifactId>org.eclipse.paho.mqttv5.client</artifactId>
                 <version>${paho.mqttv3.version}</version>
             </dependency>
 
@@ -643,7 +629,7 @@
 
             <!--
             Java Yaml 相关
-            SnakeYAML 是一个 Java 库，用于解析和生成 YAML（YAML Ain't Markup Language）格式的数据
+            SnakeYAML 是一个 Java 库, 用于解析和生成 YAML（YAML Ain't Markup Language）格式的数据
             -->
             <dependency>
                 <groupId>org.yaml</groupId>
@@ -667,7 +653,7 @@
 
             <!--
             Hibernate Validator
-            Hibernate Validator 是一个 Java Bean 验证框架，用于在 Java 应用程序中进行数据验证和约束验证
+            Hibernate Validator 是一个 Java Bean 验证框架, 用于在 Java 应用程序中进行数据验证和约束验证
             -->
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
@@ -893,6 +879,9 @@
                         <target>${java.version}</target>
                         <source>${java.version}</source>
                         <encoding>${project.build.sourceEncoding}</encoding>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                        </compilerArgs>
                         <annotationProcessorPaths>
                             <path>
                                 <groupId>org.projectlombok</groupId>
