@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.1.2</version>
+    <version>2024.1.3</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2023</inceptionYear>
@@ -107,6 +107,7 @@
         <micrometer.version>1.12.0</micrometer.version>
         <velocity.version>2.3</velocity.version>
         <apache.poi.version>5.2.5</apache.poi.version>
+        <apache.commons.version>1.26.1</apache.commons.version>
         <activation.version>2.1.3</activation.version>
         <xxl.job.version>2.4.0</xxl.job.version>
         <jna.version>5.14.0</jna.version>
@@ -475,6 +476,13 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${apache.poi.version}</version>
+            </dependency>
+
+            <!-- Apache Commons 相关 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>${apache.commons.version}</version>
             </dependency>
 
             <!--
