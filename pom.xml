@@ -21,20 +21,25 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.1.3</version>
+    <version>2024.1.4</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2023</inceptionYear>
     <url>https://github.com/pnoker/iot-dc3</url>
     <description>
-        IOT DC3 平台 父级 Maven Pom 配置。
+        IoT DC3 is an open source, distributed Internet of Things (IoT) platform based on Spring Cloud.
+        It is used for rapid development of IoT projects and management of IoT devices.
+        It is a set of solutions for IoT system.
     </description>
 
     <developers>
         <developer>
             <id>pnoker</id>
             <name>pnoker</name>
-            <email>pnokers@icloud.com</email>
+            <email>pnokers@gmail.com</email>
+            <roles>
+                <role>PMC</role>
+            </roles>
             <organization>pnoker.github.io</organization>
         </developer>
     </developers>
