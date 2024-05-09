@@ -21,10 +21,10 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.1.4</version>
+    <version>2024.1.5</version>
     <packaging>pom</packaging>
 
-    <inceptionYear>2016-2023</inceptionYear>
+    <inceptionYear>2016-2024</inceptionYear>
     <url>https://github.com/pnoker/iot-dc3</url>
     <description>
         IoT DC3 is an open source, distributed Internet of Things (IoT) platform based on Spring Cloud.
@@ -60,7 +60,7 @@
     </scm>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <maven.plugin.validation>VERBOSE</maven.plugin.validation>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -73,10 +73,10 @@
 
         <!--
         gRpc 相关
-        2024.04.29 更新, 仅 protobuf.version 无法使用最新版本
+        2024.05.09 更新, 全部为最新
          -->
         <grpc.version>1.63.0</grpc.version>
-        <protobuf.version>3.25.3</protobuf.version>
+        <protobuf.version>4.2.61</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!-- 数据库 相关 -->
@@ -84,11 +84,6 @@
         <influxdb.version>6.12.0</influxdb.version>
         <elasticsearch.version>8.13.2</elasticsearch.version>
         <mybatis.plus.version>3.5.6</mybatis.plus.version>
-        <mybatis.dynamic.version>4.3.0</mybatis.dynamic.version>
-
-        <!-- 接口文档 相关 -->
-        <knife.version>4.5.0</knife.version>
-        <swagger.version>2.2.21</swagger.version>
 
         <!-- 通用工具 -->
         <jwt.version>0.12.5</jwt.version>
@@ -266,6 +261,20 @@
                 <artifactId>grpc-stub</artifactId>
                 <version>${grpc.version}</version>
             </dependency>
+
+            <!-- Protobuf 相关 -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java-util</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+
+            <!-- gRpc Spring Boot 相关 -->
             <dependency>
                 <groupId>net.devh</groupId>
                 <artifactId>grpc-spring-boot-starter</artifactId>
@@ -280,18 +289,6 @@
                 <groupId>net.devh</groupId>
                 <artifactId>grpc-client-spring-boot-starter</artifactId>
                 <version>${grpc.spring.boot.version}</version>
-            </dependency>
-
-            <!-- Protobuf 相关 -->
-            <dependency>
-                <groupId>com.google.protobuf</groupId>
-                <artifactId>protobuf-java</artifactId>
-                <version>${protobuf.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.protobuf</groupId>
-                <artifactId>protobuf-java-util</artifactId>
-                <version>${protobuf.version}</version>
             </dependency>
 
             <!-- TDEngine -->
@@ -341,26 +338,6 @@
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
-                <version>${mybatis.dynamic.version}</version>
-            </dependency>
-
-            <!-- Knife Open Api -->
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-                <version>${knife.version}</version>
-            </dependency>
-
-            <!-- Swagger Annotations -->
-            <dependency>
-                <groupId>io.swagger.core.v3</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>${swagger.version}</version>
-                <scope>compile</scope>
-            </dependency>
 
             <!-- Jwt -->
             <dependency>
@@ -399,6 +376,51 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons.io.version}</version>
+            </dependency>
+
+            <!--
+            Jakarta 相关
+            - 用于处理 JSON（JavaScript Object Notation）数据的标准 API
+            - 用于数据验证和约束验证的标准 API
+            -->
+            <dependency>
+                <groupId>jakarta.json</groupId>
+                <artifactId>jakarta.json-api</artifactId>
+                <version>${jakarta.json.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation.version}</version>
+            </dependency>
+
+            <!-- Jakarta Annotation Api -->
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${jakarta.annotation.version}</version>
+            </dependency>
+
+            <!-- Javax Annotation Api -->
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>${javax.annotation.version}</version>
+            </dependency>
+
+            <!--
+            Hibernate Validator
+            Hibernate Validator 是一个 Java Bean 验证框架, 用于在 Java 应用程序中进行数据验证和约束验证
+            -->
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-cdi</artifactId>
+                <version>${hibernate.validator.version}</version>
             </dependency>
 
             <!-- Lombok -->
@@ -566,22 +588,6 @@
                 <version>${j.interop.version}</version>
             </dependency>
 
-            <!--
-            Jakarta 相关
-            - 用于处理 JSON（JavaScript Object Notation）数据的标准 API
-            - 用于数据验证和约束验证的标准 API
-            -->
-            <dependency>
-                <groupId>jakarta.json</groupId>
-                <artifactId>jakarta.json-api</artifactId>
-                <version>${jakarta.json.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>jakarta.validation</groupId>
-                <artifactId>jakarta.validation-api</artifactId>
-                <version>${jakarta.validation.version}</version>
-            </dependency>
-
             <!-- Jackson 相关 -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -649,35 +655,6 @@
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>${snakeyaml.version}</version>
-            </dependency>
-
-            <!-- Jakarta Annotation Api -->
-            <dependency>
-                <groupId>jakarta.annotation</groupId>
-                <artifactId>jakarta.annotation-api</artifactId>
-                <version>${jakarta.annotation.version}</version>
-            </dependency>
-
-            <!-- Javax Annotation Api -->
-            <dependency>
-                <groupId>javax.annotation</groupId>
-                <artifactId>javax.annotation-api</artifactId>
-                <version>${javax.annotation.version}</version>
-            </dependency>
-
-            <!--
-            Hibernate Validator
-            Hibernate Validator 是一个 Java Bean 验证框架, 用于在 Java 应用程序中进行数据验证和约束验证
-            -->
-            <dependency>
-                <groupId>org.hibernate.validator</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>${hibernate.validator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate.validator</groupId>
-                <artifactId>hibernate-validator-cdi</artifactId>
-                <version>${hibernate.validator.version}</version>
             </dependency>
 
         </dependencies>
