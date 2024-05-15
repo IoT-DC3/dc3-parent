@@ -73,16 +73,17 @@
 
         <!--
         gRpc 相关
-        2024.05.09 更新, 全部为最新
+        2024.04.29 更新, 仅 protobuf.version 无法使用最新版本
+        因为生成桩代码的工具停止维护了
          -->
         <grpc.version>1.63.0</grpc.version>
-        <protobuf.version>4.2.61</protobuf.version>
+        <protobuf.version>3.25.3</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!-- 数据库 相关 -->
-        <tdengine.version>3.2.9</tdengine.version>
+        <tdengine.version>3.2.11</tdengine.version>
         <influxdb.version>6.12.0</influxdb.version>
-        <elasticsearch.version>8.13.2</elasticsearch.version>
+        <elasticsearch.version>8.13.4</elasticsearch.version>
         <mybatis.plus.version>3.5.6</mybatis.plus.version>
 
         <!-- 通用工具 -->
@@ -99,34 +100,33 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <hutool.version>5.8.27</hutool.version>
-        <guava.version>33.1.0-jre</guava.version>
+        <guava.version>33.2.0-jre</guava.version>
 
         <!-- 其他依赖-->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
-        <spring.cloud.nacos.version>2021.0.5.0</spring.cloud.nacos.version>
-        <nacos.client.version>2.3.0</nacos.client.version>
-        <micrometer.version>1.12.0</micrometer.version>
+        <spring.cloud.nacos.version>2023.0.1.0</spring.cloud.nacos.version>
+        <nacos.client.version>2.3.2</nacos.client.version>
+        <micrometer.version>1.13.0</micrometer.version>
         <velocity.version>2.3</velocity.version>
         <apache.poi.version>5.2.5</apache.poi.version>
         <apache.commons.version>1.26.1</apache.commons.version>
         <activation.version>2.1.3</activation.version>
-        <xxl.job.version>2.4.0</xxl.job.version>
+        <xxl.job.version>2.4.1</xxl.job.version>
         <jna.version>5.14.0</jna.version>
         <oshi.version>6.6.0</oshi.version>
         <milo.version>0.6.12</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
         <bouncycastle.version>1.78.1</bouncycastle.version>
         <j.interop.version>3.0.0</j.interop.version>
-        <jackson.version>2.17.0</jackson.version>
+        <jackson.version>2.17.1</jackson.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
-        <jaxb.version>3.0.2</jaxb.version>
+        <jaxb.version>4.0.5</jaxb.version>
         <snakeyaml.version>2.2</snakeyaml.version>
 
         <!-- 
         Plugin 相关
         2024.04.30 更新, 全部为最新
          -->
-        <codehaus.mojo.version>2.16.2</codehaus.mojo.version>
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
         <maven.gpg.plugin>3.2.4</maven.gpg.plugin>
@@ -135,10 +135,22 @@
         <maven.compiler.plugin>3.13.0</maven.compiler.plugin>
         <maven.resource.plugin>3.3.1</maven.resource.plugin>
         <maven.dependency.plugin>3.6.1</maven.dependency.plugin>
+        <maven.version.plugin>2.16.2</maven.version.plugin>
         <maven.nexus.plugin.version>1.6.13</maven.nexus.plugin.version>
     </properties>
 
     <profiles>
+        <profile>
+            <id>version</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>versions-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>deploy</id>
             <build>
@@ -778,13 +790,6 @@
                     </executions>
                 </plugin>
 
-                <!-- Versions 插件 -->
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>versions-maven-plugin</artifactId>
-                    <version>${codehaus.mojo.version}</version>
-                </plugin>
-
                 <!-- Protobuf 插件 -->
                 <plugin>
                     <groupId>org.xolstice.maven.plugins</groupId>
@@ -824,7 +829,6 @@
                             </goals>
                             <configuration>
                                 <keyname>pnoker</keyname>
-                                <passphraseServerId>pnoker</passphraseServerId>
                             </configuration>
                         </execution>
                     </executions>
@@ -918,6 +922,31 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${maven.dependency.plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>display-dependency-tree</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>tree</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- Maven 版本 插件 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${maven.version.plugin}</version>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>display-plugin-updates</goal>
+                                <goal>display-property-updates</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <!--  Nexus Maven 插件 -->
