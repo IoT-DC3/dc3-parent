@@ -38,7 +38,8 @@ jobs:
 
       - name: Build and deploy
         env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          SERVER_ID: ${{ secrets.SERVER_ID }}
+          SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: mvn clean deploy -P deploy
+        run: mvn --settings .github/maven-settings.xml clean deploy -P deploy
