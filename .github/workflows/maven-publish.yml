@@ -9,7 +9,7 @@ on:
       - 'dc3.release.*'
 
 jobs:
-  release:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
