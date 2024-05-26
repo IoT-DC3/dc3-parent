@@ -48,7 +48,7 @@ git pull --tags
 # shellcheck disable=SC2046
 # shellcheck disable=SC2116
 tag=$(echo dc3.${type}.$(date +'%Y%m%d').$(git tag -l "dc3.${type}.$(date +'%Y%m%d').*" | wc -l | xargs printf '%02d'))
-echo "${tag}" 
+echo "${tag}"
 git tag "${tag}"
 
 git push origin --tags
