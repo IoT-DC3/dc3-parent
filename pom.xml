@@ -65,28 +65,28 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!--
-        Spring 相关
-        2024.04.30 更新, 全部为最新
+        Spring related dependencies
+        Updated on 2024.04.30, all latest
         -->
         <spring.boot.version>3.3.0</spring.boot.version>
         <spring.cloud.version>2023.0.2</spring.cloud.version>
 
         <!--
-        gRpc 相关
-        2024.04.29 更新, 仅 protobuf.version 无法使用最新版本
-        因为生成桩代码的工具停止维护了
+        gRpc related dependencies
+        Updated on 2024.04.29, only protobuf.version cannot use the latest version
+        Because the tool that generates stub code has stopped being maintained.
          -->
         <grpc.version>1.64.0</grpc.version>
         <protobuf.version>3.25.3</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
-        <!-- 数据库 相关 -->
+        <!-- Database related dependencies -->
         <tdengine.version>3.2.11</tdengine.version>
         <influxdb.version>6.12.0</influxdb.version>
         <elasticsearch.version>8.14.0</elasticsearch.version>
         <mybatis.plus.version>3.5.7</mybatis.plus.version>
 
-        <!-- 通用工具 -->
+        <!-- General tools -->
         <jwt.version>0.12.5</jwt.version>
         <okhttp.version>4.12.0</okhttp.version>
         <netty.version>4.1.110.Final</netty.version>
@@ -102,7 +102,7 @@
         <hutool.version>5.8.28</hutool.version>
         <guava.version>33.2.1-jre</guava.version>
 
-        <!-- 其他依赖-->
+        <!-- Other dependencies -->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <spring.cloud.nacos.version>2023.0.1.0</spring.cloud.nacos.version>
         <nacos.client.version>2.3.2</nacos.client.version>
@@ -124,8 +124,8 @@
         <snakeyaml.version>2.2</snakeyaml.version>
 
         <!-- 
-        Plugin 相关
-        2024.04.30 更新, 全部为最新
+        plugin related dependencies
+        Updated on 2024.04.30, all latest
          -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
@@ -215,7 +215,7 @@
         </dependency>
 
         <!-- Slf4j Api -->
-        <!-- 此版本请勿配置或升级, 否则日志启动会报错 -->
+        <!-- Please do not configure or upgrade this version, otherwise an error will be reported when logging is started. -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -244,7 +244,7 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- Spring Boot 依赖 -->
+            <!-- Spring Boot dependencies -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -253,7 +253,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Spring Cloud 依赖 -->
+            <!-- Spring Cloud dependencies -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -262,7 +262,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- gRpc 相关 -->
+            <!-- gRpc related dependencies -->
             <dependency>
                 <groupId>io.grpc</groupId>
                 <artifactId>grpc-bom</artifactId>
@@ -286,7 +286,7 @@
                 <version>${grpc.version}</version>
             </dependency>
 
-            <!-- Protobuf 相关 -->
+            <!-- Protobuf related dependencies -->
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
@@ -298,7 +298,7 @@
                 <version>${protobuf.version}</version>
             </dependency>
 
-            <!-- gRpc Spring Boot 相关 -->
+            <!-- gRpc Spring Boot related dependencies -->
             <dependency>
                 <groupId>net.devh</groupId>
                 <artifactId>grpc-spring-boot-starter</artifactId>
@@ -336,7 +336,7 @@
                 <version>${elasticsearch.version}</version>
             </dependency>
 
-            <!-- Mybatis Plus 相关 -->
+            <!-- Mybatis Plus related dependencies -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-core</artifactId>
@@ -370,7 +370,7 @@
                 <version>${jwt.version}</version>
             </dependency>
 
-            <!-- Ok Http 相关 -->
+            <!-- Ok Http related dependencies -->
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
@@ -382,7 +382,7 @@
                 <version>${okhttp.version}</version>
             </dependency>
 
-            <!-- Netty 相关 -->
+            <!-- Netty related dependencies -->
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
@@ -403,9 +403,9 @@
             </dependency>
 
             <!--
-            Jakarta 相关
-            - 用于处理 JSON（JavaScript Object Notation）数据的标准 API
-            - 用于数据验证和约束验证的标准 API
+            Jakarta related dependencies
+            - Standard API for processing JSON (JavaScript Object Notation) data
+            - Standard API for data validation and constraint validation
             -->
             <dependency>
                 <groupId>jakarta.json</groupId>
@@ -434,7 +434,7 @@
 
             <!--
             Hibernate Validator
-            Hibernate Validator 是一个 Java Bean 验证框架, 用于在 Java 应用程序中进行数据验证和约束验证
+            Hibernate Validator is a Java Bean validation framework for data validation and constraint validation in Java applications
             -->
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
@@ -518,7 +518,7 @@
                 <version>${velocity.version}</version>
             </dependency>
 
-            <!-- Apache Poi 相关 -->
+            <!-- Apache Poi related dependencies -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
@@ -530,7 +530,7 @@
                 <version>${apache.poi.version}</version>
             </dependency>
 
-            <!-- Apache Commons 相关 -->
+            <!-- Apache Commons related dependencies -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
@@ -538,7 +538,7 @@
             </dependency>
 
             <!--
-             Jakarta Activation API 是用于激活各种 MIME 类型的 Java API
+             Jakarta Activation API is a Java API for activating various MIME types
              -->
             <dependency>
                 <groupId>jakarta.activation</groupId>
@@ -553,7 +553,7 @@
                 <version>${xxl.job.version}</version>
             </dependency>
 
-            <!-- Java Native Access 相关 -->
+            <!-- Java Native Access related dependencies -->
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna</artifactId>
@@ -572,14 +572,14 @@
                 <version>${oshi.version}</version>
             </dependency>
 
-            <!-- OPC UA 相关 -->
+            <!-- OPC UA related dependencies -->
             <dependency>
                 <groupId>org.eclipse.milo</groupId>
                 <artifactId>sdk-client</artifactId>
                 <version>${milo.version}</version>
             </dependency>
 
-            <!-- Mqtt 相关 -->
+            <!-- Mqtt related dependencies -->
             <dependency>
                 <groupId>org.eclipse.paho</groupId>
                 <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
@@ -593,8 +593,9 @@
 
             <!--
             Bouncy Castle Provider
-            用于提供 Java 密码学的相关功能
-            是一个流行的开源密码库, 提供了许多密码学相关的算法和功能, 如对称加密算法、非对称加密算法、哈希函数、数字签名、证书生成等
+            Used to provide Java cryptography related functions
+            It is a popular open source cryptographic library that provides many cryptography-related algorithms and functions, 
+            such as symmetric encryption algorithms, asymmetric encryption algorithms, hash functions, digital signatures, certificate generation, etc.
             -->
             <dependency>
                 <groupId>org.bouncycastle</groupId>
@@ -603,8 +604,8 @@
             </dependency>
 
             <!--
-            Java COM 相关, 用于与 Microsoft Windows 平台上运行的 DCOM (Distributed Component Object Model) 服务进行通信
-            DCOM (Distributed Component Object Model)  是 Microsoft 开发的一种远程过程调用 (RPC) 技术, 用于在 Windows 系统上实现跨网络的组件间通信
+            Java COM related, used to communicate with DCOM (Distributed Component Object Model) services running on Microsoft Windows platforms
+            DCOM (Distributed Component Object Model) is a remote procedure call (RPC) technology developed by Microsoft for inter-component communication across networks on Windows systems.
             -->
             <dependency>
                 <groupId>org.jinterop</groupId>
@@ -612,7 +613,7 @@
                 <version>${j.interop.version}</version>
             </dependency>
 
-            <!-- Jackson 相关 -->
+            <!-- Jackson related dependencies -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
@@ -650,10 +651,10 @@
             </dependency>
 
             <!--
-            JAXB（Java Architecture for XML Binding）API 相关
-            - 用于将 XML 数据与 Java 对象进行相互转换的 API
-            - 用于运行时执行 XML 数据的绑定操作
-            - 用于支持 XML 数据的绑定操作
+            JAXB（Java Architecture for XML Binding）API related dependencies
+            - API for converting XML data to and from Java objects
+            - Used to perform binding operations on XML data at runtime
+            - Binding operations to support XML data
             -->
             <dependency>
                 <groupId>javax.xml.bind</groupId>
@@ -672,8 +673,8 @@
             </dependency>
 
             <!--
-            Java Yaml 相关
-            SnakeYAML 是一个 Java 库, 用于解析和生成 YAML（YAML Ain't Markup Language）格式的数据
+            Java Yaml related dependencies
+            SnakeYAML is a Java library for parsing and generating data in YAML (YAML Ain't Markup Language) format
             -->
             <dependency>
                 <groupId>org.yaml</groupId>
@@ -735,7 +736,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>public-plugin</id>
-            <name>Aliyun Public Plugin Repository</name>
+            <name>Aliyun Public plugin Repository</name>
             <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
@@ -747,7 +748,7 @@
 
         <pluginRepository>
             <id>spring-plugin</id>
-            <name>Aliyun Spring Plugin Repository</name>
+            <name>Aliyun Spring plugin Repository</name>
             <url>https://maven.aliyun.com/repository/spring-plugin</url>
             <releases>
                 <enabled>true</enabled>
@@ -785,7 +786,7 @@
 
         <pluginManagement>
             <plugins>
-                <!-- Spring Boot Maven 插件 -->
+                <!-- Spring Boot Maven plugin -->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -802,7 +803,7 @@
                     </executions>
                 </plugin>
 
-                <!-- Graalvm 插件 -->
+                <!-- Graalvm plugin -->
                 <plugin>
                     <groupId>org.graalvm.buildtools</groupId>
                     <artifactId>native-maven-plugin</artifactId>
@@ -818,7 +819,7 @@
                     </executions>
                 </plugin>
 
-                <!-- Protobuf 插件 -->
+                <!-- Protobuf plugin -->
                 <plugin>
                     <groupId>org.xolstice.maven.plugins</groupId>
                     <artifactId>protobuf-maven-plugin</artifactId>
@@ -843,7 +844,7 @@
                     </executions>
                 </plugin>
 
-                <!-- GPG 插件 -->
+                <!-- GPG plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
@@ -862,7 +863,7 @@
                     </executions>
                 </plugin>
 
-                <!-- 源码插件 -->
+                <!-- Source Plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
@@ -877,7 +878,7 @@
                     </executions>
                 </plugin>
 
-                <!-- 文档插件 -->
+                <!-- Javadoc plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
@@ -892,7 +893,7 @@
                     </executions>
                 </plugin>
 
-                <!-- 编译插件 -->
+                <!-- Compile plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -925,7 +926,7 @@
                     </configuration>
                 </plugin>
 
-                <!-- 过滤文件插件 -->
+                <!-- Filter file plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
@@ -945,7 +946,7 @@
                     </configuration>
                 </plugin>
 
-                <!-- Maven 依赖 插件 -->
+                <!-- Maven Dependency plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -961,7 +962,7 @@
                     </executions>
                 </plugin>
 
-                <!-- Maven 版本 插件 -->
+                <!-- Maven Version plugin -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
@@ -977,9 +978,9 @@
                     </executions>
                 </plugin>
 
-                <!--  Nexus Maven 插件 -->
+                <!--  Nexus Maven plugin -->
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
+                    <groupId>org.sonatype.</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${maven.nexus.plugin.version}</version>
                     <extensions>true</extensions>

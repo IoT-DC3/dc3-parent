@@ -1,1 +1,1 @@
-IOT DC3 平台 父级 Maven Pom 配置。
+IoT DC3 Parent Maven Pom Configuration.
