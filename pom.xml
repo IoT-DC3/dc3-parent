@@ -123,6 +123,12 @@
         <jaxb.version>4.0.5</jaxb.version>
         <snakeyaml.version>2.2</snakeyaml.version>
 
+        <!--
+        OS Plugin related dependencies
+        Updated on 2024.10.24, all latest
+         -->
+        <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
+
         <!-- 
         Plugin related dependencies
         Updated on 2024.04.30, all latest
