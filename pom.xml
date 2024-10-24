@@ -80,11 +80,16 @@
         <protobuf.version>3.25.3</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
-        <!-- Database related dependencies -->
+        <!--
+         Database related dependencies,
+         When mybatis.plus.version is upgraded to 3.5.9,
+         an error will be reported during compilation.
+         Updated on 2024.10.24, all latest
+         -->
         <tdengine.version>3.2.11</tdengine.version>
         <influxdb.version>7.2.0</influxdb.version>
         <elasticsearch.version>8.15.3</elasticsearch.version>
-        <mybatis.plus.version>3.5.9</mybatis.plus.version>
+        <mybatis.plus.version>3.5.7</mybatis.plus.version>
 
         <!-- General tools -->
         <jwt.version>0.12.5</jwt.version>
