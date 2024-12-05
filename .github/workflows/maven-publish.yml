@@ -31,10 +31,7 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-      
-      - name: Install jq
-        run: sudo apt-get install jq
-      
+
       - name: Decrypt GPG key
         run: |
           echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode > private-key.asc
@@ -47,7 +44,10 @@ jobs:
           SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        
+
+      - name: Install jq
+        run: sudo apt-get install jq
+
       - name: Close Staging Repository
         run: |
           STAGING_REPO_ID=$(curl -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
@@ -62,5 +62,6 @@ jobs:
           STAGING_REPO_ID=$(curl -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
             -X GET "https://s01.oss.sonatype.org/service/rest/v1/staging/repositories" \
             | jq -r '.items[0].id')
+          echo "Staging repository ID: $STAGING_REPO_ID"
           curl -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
           -X POST "https://s01.oss.sonatype.org/service/rest/v1/staging/repositories/${STAGING_REPO_ID}/drop"
