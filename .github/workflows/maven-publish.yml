@@ -53,3 +53,7 @@ jobs:
       
       - name: Run release shell
         run: .github/release-to-nexus.sh
+        env:
+          SERVER_URL: ${{ secrets.SERVER_URL }}
+          SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}      
