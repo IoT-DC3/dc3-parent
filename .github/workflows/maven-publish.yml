@@ -61,3 +61,9 @@ jobs:
             "${{ secrets.SERVER_URL }}/service/local/staging/bulk/close" \
             -H "Content-Type:application/json" \
             -d '{"data":{"description":"github action close","stagedRepositoryIds":["${STAGING_REPO_ID}"]}}'
+
+          curl -v -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
+            -X POST \
+            "https://s01.oss.sonatype.org/service/local/staging/bulk/promote" \
+            -H "Content-Type:application/json" \
+            -d '{"data":{"description":"github action release","autoDropAfterRelease":true,"stagedRepositoryIds":["${STAGING_REPO_ID}"]}}'
