@@ -54,14 +54,5 @@ jobs:
             -X GET "https://s01.oss.sonatype.org/service/rest/v1/staging/repositories" \
             | jq -r '.items[0].id')
           echo "Staging repository ID: $STAGING_REPO_ID"
-          curl -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
+          curl -v -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
           -X POST "https://s01.oss.sonatype.org/service/rest/v1/staging/repositories/${STAGING_REPO_ID}/close"
-
-      - name: Drop Staging Repository (optional)
-        run: |
-          STAGING_REPO_ID=$(curl -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
-            -X GET "https://s01.oss.sonatype.org/service/rest/v1/staging/repositories" \
-            | jq -r '.items[0].id')
-          echo "Staging repository ID: $STAGING_REPO_ID"
-          curl -u ${{ secrets.SERVER_USERNAME }}:${{ secrets.SERVER_PASSWORD }} \
-          -X POST "https://s01.oss.sonatype.org/service/rest/v1/staging/repositories/${STAGING_REPO_ID}/drop"
