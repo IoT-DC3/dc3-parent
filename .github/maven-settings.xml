@@ -27,15 +27,6 @@
         </server>
     </servers>
 
-    <mirrors>
-        <mirror>
-            <id>public</id>
-            <mirrorOf>public</mirrorOf>
-            <name>Aliyun Apache Maven Public Packages</name>
-            <url>https://maven.aliyun.com/repository/public</url>
-        </mirror>
-    </mirrors>
-
     <profiles>
         <profile>
             <id>pnoker</id>
