@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.3.8</version>
+    <version>2024.3.9</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2024</inceptionYear>
@@ -68,8 +68,8 @@
         Spring related dependencies
         Updated on 2024.10.24, all latest
         -->
-        <spring.boot.version>3.3.6</spring.boot.version>
-        <spring.cloud.version>2023.0.4</spring.cloud.version>
+        <spring.boot.version>3.4.0</spring.boot.version>
+        <spring.cloud.version>2024.0.0</spring.cloud.version>
 
         <!--
         gRpc related dependencies
