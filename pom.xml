@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.3.7</version>
+    <version>2024.3.8</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2024</inceptionYear>
@@ -76,8 +76,8 @@
         Updated on 2024.10.24, only protobuf.version cannot use the latest version
         Because the tool that generates stub code has stopped being maintained.
          -->
-        <grpc.version>1.68.2</grpc.version>
-        <protobuf.version>4.29.0</protobuf.version>
+        <grpc.version>1.69.0</grpc.version>
+        <protobuf.version>4.29.1</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!--
