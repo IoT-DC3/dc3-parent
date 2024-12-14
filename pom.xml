@@ -68,16 +68,16 @@
         Spring related dependencies
         Updated on 2024.10.24, all latest
         -->
-        <spring.boot.version>3.3.6</spring.boot.version>
-        <spring.cloud.version>2023.0.4</spring.cloud.version>
+        <spring.boot.version>3.4.0</spring.boot.version>
+        <spring.cloud.version>2024.0.0</spring.cloud.version>
 
         <!--
         gRpc related dependencies
         Updated on 2024.10.24, only protobuf.version cannot use the latest version
         Because the tool that generates stub code has stopped being maintained.
          -->
-        <grpc.version>1.68.2</grpc.version>
-        <protobuf.version>4.29.0</protobuf.version>
+        <grpc.version>1.69.0</grpc.version>
+        <protobuf.version>4.29.1</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!--
@@ -88,7 +88,7 @@
          -->
         <tdengine.version>3.4.0</tdengine.version>
         <influxdb.version>7.2.0</influxdb.version>
-        <elasticsearch.version>8.16.1</elasticsearch.version>
+        <elasticsearch.version>8.17.0</elasticsearch.version>
         <mybatis.plus.version>3.5.9</mybatis.plus.version>
 
         <!-- General tools -->
@@ -111,7 +111,7 @@
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <spring.cloud.nacos.version>2023.0.3.2</spring.cloud.nacos.version>
         <nacos.client.version>2.4.3</nacos.client.version>
-        <micrometer.version>1.14.1</micrometer.version>
+        <micrometer.version>1.14.2</micrometer.version>
         <freemarker.version>2.3.33</freemarker.version>
         <apache.poi.version>5.3.0</apache.poi.version>
         <apache.commons.version>1.27.1</apache.commons.version>
@@ -119,7 +119,7 @@
         <xxl.job.version>2.4.2</xxl.job.version>
         <jna.version>5.15.0</jna.version>
         <oshi.version>6.6.5</oshi.version>
-        <milo.version>0.6.14</milo.version>
+        <milo.version>0.6.15</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
         <bouncycastle.version>1.79</bouncycastle.version>
         <j.interop.version>3.0.0</j.interop.version>
@@ -139,10 +139,10 @@
         Updated on 2024.04.30, all latest
          -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
-        <graalvm.native.version>0.10.3</graalvm.native.version>
+        <graalvm.native.version>0.10.4</graalvm.native.version>
         <maven.gpg.plugin>3.2.7</maven.gpg.plugin>
         <maven.source.plugin>3.3.1</maven.source.plugin>
-        <maven.javadoc.plugin>3.11.1</maven.javadoc.plugin>
+        <maven.javadoc.plugin>3.11.2</maven.javadoc.plugin>
         <maven.compiler.plugin>3.13.0</maven.compiler.plugin>
         <maven.resource.plugin>3.3.1</maven.resource.plugin>
         <maven.dependency.plugin>3.8.1</maven.dependency.plugin>
