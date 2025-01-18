@@ -50,7 +50,7 @@ jobs:
 
       - name: Chmod release shell
         run: chmod +x .github/release-to-nexus.sh
-      
+
       - name: Run release shell
         run: .github/release-to-nexus.sh
         env:
