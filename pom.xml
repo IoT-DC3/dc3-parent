@@ -21,15 +21,15 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2024.3.7</version>
+    <version>2024.3.8</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2024</inceptionYear>
     <url>https://github.com/pnoker/iot-dc3</url>
     <description>
-        IoT DC3 is an open source, distributed Internet of Things (IoT) platform based on Spring Cloud.
-        It is used for rapid development of IoT projects and management of IoT devices.
-        It is a set of solutions for IoT system.
+        IoT DC3 is a 100% open-source, distributed Internet of Things (IoT) platform built on Spring Cloud.
+        It accelerates IoT project development and simplifies IoT device management, offering a comprehensive solution for building robust IoT systems.
+        All components and code are fully open-source, ensuring transparency, flexibility, and community-driven innovation.
     </description>
 
     <developers>
@@ -68,16 +68,16 @@
         Spring related dependencies
         Updated on 2024.10.24, all latest
         -->
-        <spring.boot.version>3.3.6</spring.boot.version>
-        <spring.cloud.version>2023.0.4</spring.cloud.version>
+        <spring.boot.version>3.4.1</spring.boot.version>
+        <spring.cloud.version>2024.0.0</spring.cloud.version>
 
         <!--
         gRpc related dependencies
         Updated on 2024.10.24, only protobuf.version cannot use the latest version
         Because the tool that generates stub code has stopped being maintained.
          -->
-        <grpc.version>1.68.2</grpc.version>
-        <protobuf.version>4.29.0</protobuf.version>
+        <grpc.version>1.69.1</grpc.version>
+        <protobuf.version>4.29.3</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!--
@@ -86,10 +86,10 @@
          an error will be reported during compilation.
          Updated on 2024.10.24, all latest
          -->
-        <tdengine.version>3.4.0</tdengine.version>
+        <tdengine.version>3.5.2</tdengine.version>
         <influxdb.version>7.2.0</influxdb.version>
-        <elasticsearch.version>8.16.1</elasticsearch.version>
-        <mybatis.plus.version>3.5.9</mybatis.plus.version>
+        <elasticsearch.version>8.17.0</elasticsearch.version>
+        <mybatis.plus.version>3.5.10.1</mybatis.plus.version>
 
         <!-- General tools -->
         <jwt.version>0.12.6</jwt.version>
@@ -104,24 +104,24 @@
         <lombok.version>1.18.36</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-        <hutool.version>5.8.34</hutool.version>
-        <guava.version>33.3.1-jre</guava.version>
+        <hutool.version>5.8.35</hutool.version>
+        <guava.version>33.4.0-jre</guava.version>
 
         <!-- Other dependencies -->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <spring.cloud.nacos.version>2023.0.3.2</spring.cloud.nacos.version>
         <nacos.client.version>2.4.3</nacos.client.version>
-        <micrometer.version>1.14.1</micrometer.version>
-        <freemarker.version>2.3.33</freemarker.version>
-        <apache.poi.version>5.3.0</apache.poi.version>
+        <micrometer.version>1.14.3</micrometer.version>
+        <freemarker.version>2.3.34</freemarker.version>
+        <apache.poi.version>5.4.0</apache.poi.version>
         <apache.commons.version>1.27.1</apache.commons.version>
         <activation.version>2.1.3</activation.version>
-        <xxl.job.version>2.4.2</xxl.job.version>
-        <jna.version>5.15.0</jna.version>
+        <xxl.job.version>2.5.0</xxl.job.version>
+        <jna.version>5.16.0</jna.version>
         <oshi.version>6.6.5</oshi.version>
-        <milo.version>0.6.14</milo.version>
+        <milo.version>0.6.15</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
-        <bouncycastle.version>1.79</bouncycastle.version>
+        <bouncycastle.version>1.80</bouncycastle.version>
         <j.interop.version>3.0.0</j.interop.version>
         <jackson.version>2.18.2</jackson.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
@@ -139,10 +139,10 @@
         Updated on 2024.04.30, all latest
          -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
-        <graalvm.native.version>0.10.3</graalvm.native.version>
+        <graalvm.native.version>0.10.4</graalvm.native.version>
         <maven.gpg.plugin>3.2.7</maven.gpg.plugin>
         <maven.source.plugin>3.3.1</maven.source.plugin>
-        <maven.javadoc.plugin>3.11.1</maven.javadoc.plugin>
+        <maven.javadoc.plugin>3.11.2</maven.javadoc.plugin>
         <maven.compiler.plugin>3.13.0</maven.compiler.plugin>
         <maven.resource.plugin>3.3.1</maven.resource.plugin>
         <maven.dependency.plugin>3.8.1</maven.dependency.plugin>
