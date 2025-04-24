@@ -66,14 +66,14 @@
 
         <!--
         Spring related dependencies
-        Updated on 2024.10.24, all latest
+        Updated on 2025.04.24, all latest
         -->
         <spring.boot.version>3.4.4</spring.boot.version>
         <spring.cloud.version>2024.0.1</spring.cloud.version>
 
         <!--
         gRpc related dependencies
-        Updated on 2024.10.24, only protobuf.version cannot use the latest version
+        Updated on 2025.04.24, only protobuf.version cannot use the latest version
         Because the tool that generates stub code has stopped being maintained.
          -->
         <grpc.version>1.72.0</grpc.version>
@@ -84,17 +84,17 @@
          Database related dependencies,
          When mybatis.plus.version is upgraded to 3.5.9,
          an error will be reported during compilation.
-         Updated on 2024.10.24, all latest
+         Updated on 2025.04.24, all latest
          -->
         <tdengine.version>3.6.1</tdengine.version>
         <influxdb.version>7.2.0</influxdb.version>
-        <elasticsearch.version>8.17.1</elasticsearch.version>
+        <elasticsearch.version>9.0.0</elasticsearch.version>
         <mybatis.plus.version>3.5.11</mybatis.plus.version>
 
         <!-- General tools -->
         <jwt.version>0.12.6</jwt.version>
         <okhttp.version>4.12.0</okhttp.version>
-        <netty.version>4.1.115.Final</netty.version>
+        <netty.version>4.2.0.Final</netty.version>
         <commons.io.version>2.18.0</commons.io.version>
         <jakarta.json.version>2.1.3</jakarta.json.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
@@ -119,7 +119,7 @@
         <xxl.job.version>3.0.0</xxl.job.version>
         <jna.version>5.17.0</jna.version>
         <oshi.version>6.8.1</oshi.version>
-        <milo.version>0.6.15</milo.version>
+        <milo.version>0.6.16</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
         <bouncycastle.version>1.80</bouncycastle.version>
         <j.interop.version>2.0.4</j.interop.version>
@@ -130,13 +130,13 @@
 
         <!--
         OS Plugin related dependencies
-        Updated on 2024.10.24, all latest
+        Updated on 2025.04.24, all latest
          -->
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
 
         <!-- 
         Plugin related dependencies
-        Updated on 2024.04.30, all latest
+        Updated on 2025.04.24, all latest
          -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
         <graalvm.native.version>0.10.6</graalvm.native.version>
