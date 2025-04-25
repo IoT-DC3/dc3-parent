@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2025.2.4</version>
+    <version>2025.2.5</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2024</inceptionYear>
@@ -68,7 +68,7 @@
         Spring related dependencies
         Updated on 2025.04.24, all latest
         -->
-        <spring.boot.version>3.4.4</spring.boot.version>
+        <spring.boot.version>3.4.5</spring.boot.version>
         <spring.cloud.version>2024.0.1</spring.cloud.version>
 
         <!--
@@ -122,12 +122,19 @@
         <milo.version>0.6.16</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
         <bouncycastle.version>1.80</bouncycastle.version>
-        <j.interop.version>3.0.0</j.interop.version>
         <jackson.version>2.18.3</jackson.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
         <jaxb.version>4.0.5</jaxb.version>
         <snakeyaml.version>2.4</snakeyaml.version>
 
+        <!-- 
+        J-Interop version
+        J-Interop is a Java library that enables Java applications to communicate with DCOM (Distributed Component Object Model) services 
+        running on Microsoft Windows platforms. It provides pure Java implementation of DCOM protocol.
+        Updated on 2025.04.24, all latest, do not update to 3.0.0 or it will cause errors
+        -->
+        <j.interop.version>2.0.4</j.interop.version>
+        
         <!--
         OS Plugin related dependencies
         Updated on 2025.04.24, all latest
