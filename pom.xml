@@ -134,7 +134,7 @@
         Updated on 2025.04.24, all latest, do not update to 3.0.0 or it will cause errors
         -->
         <j.interop.version>2.0.4</j.interop.version>
-        
+
         <!--
         OS Plugin related dependencies
         Updated on 2025.04.24, all latest
