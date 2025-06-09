@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2025.2.5</version>
+    <version>2025.6.0</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-2024</inceptionYear>
@@ -68,16 +68,16 @@
         Spring related dependencies
         Updated on 2025.04.24, all latest
         -->
-        <spring.boot.version>3.4.5</spring.boot.version>
-        <spring.cloud.version>2024.0.1</spring.cloud.version>
+        <spring.boot.version>3.5.0</spring.boot.version>
+        <spring.cloud.version>2025.0.0</spring.cloud.version>
 
         <!--
         gRpc related dependencies
         Updated on 2025.04.24, only protobuf.version cannot use the latest version
         Because the tool that generates stub code has stopped being maintained.
          -->
-        <grpc.version>1.72.0</grpc.version>
-        <protobuf.version>4.29.3</protobuf.version>
+        <grpc.version>1.73.0</grpc.version>
+        <protobuf.version>4.31.1</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!--
@@ -86,43 +86,38 @@
          an error will be reported during compilation.
          Updated on 2025.04.24, all latest
          -->
-        <tdengine.version>3.6.1</tdengine.version>
-        <influxdb.version>7.2.0</influxdb.version>
-        <elasticsearch.version>9.0.0</elasticsearch.version>
-        <mybatis.plus.version>3.5.11</mybatis.plus.version>
+        <mybatis.plus.version>3.5.12</mybatis.plus.version>
+        <mybatis.plus.dynamic.version>4.3.1</mybatis.plus.dynamic.version>
 
         <!-- General tools -->
         <jwt.version>0.12.6</jwt.version>
         <okhttp.version>4.12.0</okhttp.version>
-        <netty.version>4.2.0.Final</netty.version>
-        <commons.io.version>2.18.0</commons.io.version>
+        <netty.version>4.2.2.Final</netty.version>
+        <commons.io.version>2.19.0</commons.io.version>
         <jakarta.json.version>2.1.3</jakarta.json.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
         <jakarta.validation.version>3.1.1</jakarta.validation.version>
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
-        <hibernate.validator.version>8.0.1.Final</hibernate.validator.version>
+        <hibernate.validator.version>9.0.0.Final</hibernate.validator.version>
         <lombok.version>1.18.38</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-        <hutool.version>5.8.37</hutool.version>
+        <hutool.version>5.8.38</hutool.version>
         <guava.version>33.4.8-jre</guava.version>
 
         <!-- Other dependencies -->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
-        <spring.cloud.nacos.version>2023.0.3.2</spring.cloud.nacos.version>
-        <nacos.client.version>2.4.3</nacos.client.version>
-        <micrometer.version>1.14.3</micrometer.version>
+        <micrometer.version>1.15.0</micrometer.version>
         <freemarker.version>2.3.34</freemarker.version>
         <apache.poi.version>5.4.1</apache.poi.version>
         <apache.commons.version>1.27.1</apache.commons.version>
         <activation.version>2.1.3</activation.version>
-        <xxl.job.version>3.0.0</xxl.job.version>
         <jna.version>5.17.0</jna.version>
-        <oshi.version>6.8.1</oshi.version>
+        <oshi.version>6.8.2</oshi.version>
         <milo.version>0.6.16</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
-        <bouncycastle.version>1.80</bouncycastle.version>
-        <jackson.version>2.18.3</jackson.version>
+        <bouncycastle.version>1.81</bouncycastle.version>
+        <jackson.version>2.19.0</jackson.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
         <jaxb.version>4.0.5</jaxb.version>
         <snakeyaml.version>2.4</snakeyaml.version>
@@ -338,27 +333,6 @@
                 <version>${grpc.spring.boot.version}</version>
             </dependency>
 
-            <!-- TDEngine -->
-            <dependency>
-                <groupId>com.taosdata.jdbc</groupId>
-                <artifactId>taos-jdbcdriver</artifactId>
-                <version>${tdengine.version}</version>
-            </dependency>
-
-            <!-- InfluxDB -->
-            <dependency>
-                <groupId>com.influxdb</groupId>
-                <artifactId>influxdb-client-java</artifactId>
-                <version>${influxdb.version}</version>
-            </dependency>
-
-            <!-- Elasticsearch -->
-            <dependency>
-                <groupId>co.elastic.clients</groupId>
-                <artifactId>elasticsearch-java</artifactId>
-                <version>${elasticsearch.version}</version>
-            </dependency>
-
             <!-- Mybatis Plus related dependencies -->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -389,6 +363,11 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${mybatis.plus.dynamic.version}</version>
             </dependency>
 
             <!-- Jwt -->
@@ -520,18 +499,6 @@
                 <version>${spring-oauth2.version}</version>
             </dependency>
 
-            <!-- Spring Cloud Nacos Client -->
-            <dependency>
-                <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-client</artifactId>
-                <version>${nacos.client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-                <version>${spring.cloud.nacos.version}</version>
-            </dependency>
-
             <!-- Micrometer -->
             <dependency>
                 <groupId>io.micrometer</groupId>
@@ -572,13 +539,6 @@
                 <groupId>jakarta.activation</groupId>
                 <artifactId>jakarta.activation-api</artifactId>
                 <version>${activation.version}</version>
-            </dependency>
-
-            <!-- XXL JOB -->
-            <dependency>
-                <groupId>com.xuxueli</groupId>
-                <artifactId>xxl-job-core</artifactId>
-                <version>${xxl.job.version}</version>
             </dependency>
 
             <!-- Java Native Access related dependencies -->
