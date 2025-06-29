@@ -102,7 +102,7 @@
         <lombok.version>1.18.38</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-        <hutool.version>5.8.38</hutool.version>
+        <hutool.version>5.8.39</hutool.version>
         <guava.version>33.4.8-jre</guava.version>
 
         <!-- Other dependencies -->
@@ -218,40 +218,63 @@
 
     <dependencies>
 
-        <!-- Spring Boot Configuration-->
+        <!-- 
+        Spring Boot Configuration Processor
+        Generates metadata about @ConfigurationProperties classes
+        Enables IDE support for custom properties in application.properties/yaml
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
 
-        <!-- Spring Boot Test -->
+        <!-- 
+        Spring Boot Test
+        Provides testing utilities and annotations for Spring Boot applications
+        Includes JUnit, Mockito, AssertJ and other testing libraries
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Slf4j Api -->
-        <!-- Please do not configure or upgrade this version, otherwise an error will be reported when logging is started. -->
+        <!-- 
+        SLF4J (Simple Logging Facade for Java)
+        Serves as a simple facade or abstraction for various logging frameworks
+        Please do not configure or upgrade this version, otherwise an error will be reported when logging is started.
+        -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
-        <!-- Jakarta Annotation Api -->
+        <!-- 
+        Jakarta Annotation API
+        Provides common annotations for Java EE/Jakarta EE applications
+        Used for dependency injection and other container services
+        -->
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
 
-        <!-- Lombok -->
+        <!-- 
+        Lombok
+        Java library that automatically plugs into your editor
+        Reduces boilerplate code by providing annotations like @Data, @Builder etc
+        -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!-- MapStruct -->
+        <!-- 
+        MapStruct
+        Code generator that simplifies the implementation of mappings between Java bean types
+        Provides type-safe and performant way to map between different object models
+        -->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
@@ -262,7 +285,11 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- Spring Boot dependencies -->
+            <!-- 
+            Spring Boot Dependencies
+            Core Spring Boot dependencies that provide auto-configuration, logging, and other basic features
+            Used as the foundation for building Spring Boot applications
+            -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -271,7 +298,11 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Spring Cloud dependencies -->
+            <!-- 
+            Spring Cloud Dependencies
+            Provides tools for building distributed systems and microservices
+            Includes service discovery, configuration management, circuit breakers etc.
+            -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -280,7 +311,11 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- gRpc related dependencies -->
+            <!-- 
+            gRPC Dependencies
+            High performance RPC framework developed by Google
+            Enables efficient communication between distributed services
+            -->
             <dependency>
                 <groupId>io.grpc</groupId>
                 <artifactId>grpc-bom</artifactId>
@@ -304,7 +339,11 @@
                 <version>${grpc.version}</version>
             </dependency>
 
-            <!-- Protobuf related dependencies -->
+            <!-- 
+            Protocol Buffers Dependencies
+            Google's language-neutral, platform-neutral data serialization format
+            Used for efficient data exchange between services
+            -->
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
@@ -316,7 +355,11 @@
                 <version>${protobuf.version}</version>
             </dependency>
 
-            <!-- gRpc Spring Boot related dependencies -->
+            <!-- 
+            gRPC Spring Boot Integration
+            Provides seamless integration between gRPC and Spring Boot
+            Simplifies building gRPC services in Spring Boot applications
+            -->
             <dependency>
                 <groupId>net.devh</groupId>
                 <artifactId>grpc-spring-boot-starter</artifactId>
@@ -333,7 +376,11 @@
                 <version>${grpc.spring.boot.version}</version>
             </dependency>
 
-            <!-- Mybatis Plus related dependencies -->
+            <!-- 
+            MyBatis-Plus Dependencies
+            Enhanced version of MyBatis SQL mapper framework
+            Provides additional features like code generation, CRUD operations etc.
+            -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-core</artifactId>
@@ -370,14 +417,22 @@
                 <version>${mybatis.plus.dynamic.version}</version>
             </dependency>
 
-            <!-- Jwt -->
+            <!-- 
+            JWT (JSON Web Token)
+            Compact URL-safe means of representing claims between parties
+            Used for authentication and information exchange
+            -->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${jwt.version}</version>
             </dependency>
 
-            <!-- Ok Http related dependencies -->
+            <!-- 
+            OkHttp Dependencies
+            Modern HTTP client for Android and Java applications
+            Supports HTTP/2, connection pooling, and more
+            -->
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
@@ -389,7 +444,11 @@
                 <version>${okhttp.version}</version>
             </dependency>
 
-            <!-- Netty related dependencies -->
+            <!-- 
+            Netty Dependencies
+            Asynchronous event-driven network application framework
+            Used for building high-performance protocol servers & clients
+            -->
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
@@ -402,7 +461,11 @@
                 <scope>runtime</scope>
             </dependency>
 
-            <!-- Commons IO -->
+            <!-- 
+            Apache Commons IO
+            Library of utilities for developing IO functionality
+            Provides file handling and IO operation utilities
+            -->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
@@ -425,14 +488,22 @@
                 <version>${jakarta.validation.version}</version>
             </dependency>
 
-            <!-- Jakarta Annotation Api -->
+            <!-- 
+            Jakarta Annotation API
+            Provides common annotations for Java EE applications
+            Used for dependency injection and other container services
+            -->
             <dependency>
                 <groupId>jakarta.annotation</groupId>
                 <artifactId>jakarta.annotation-api</artifactId>
                 <version>${jakarta.annotation.version}</version>
             </dependency>
 
-            <!-- Javax Annotation Api -->
+            <!-- 
+            Javax Annotation API
+            Legacy annotation API for Java EE applications
+            Maintained for backward compatibility
+            -->
             <dependency>
                 <groupId>javax.annotation</groupId>
                 <artifactId>javax.annotation-api</artifactId>
@@ -454,7 +525,11 @@
                 <version>${hibernate.validator.version}</version>
             </dependency>
 
-            <!-- Lombok -->
+            <!-- 
+            Lombok
+            Java library that automatically plugs into your editor
+            Reduces boilerplate code through annotations
+            -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -462,7 +537,11 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- MapStruct -->
+            <!-- 
+            MapStruct
+            Code generator for bean mappings
+            Simplifies implementation of mappings between Java bean types
+            -->
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
@@ -470,7 +549,11 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- Lombok MapStruct Binding -->
+            <!-- 
+            Lombok MapStruct Binding
+            Integration between Lombok and MapStruct
+            Ensures proper processing order of annotations
+            -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-mapstruct-binding</artifactId>
@@ -478,42 +561,66 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- HuTool -->
+            <!-- 
+            Hutool
+            Comprehensive Java utility library
+            Provides tools for encryption, HTTP requests, date operations etc.
+            -->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
 
-            <!-- Guava -->
+            <!-- 
+            Google Guava
+            Suite of core Java libraries from Google
+            Provides utilities for collections, caching, primitives support etc.
+            -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
 
-            <!-- Security OAuth2-->
+            <!-- 
+            Spring Security OAuth2
+            OAuth2 security framework integration for Spring applications
+            Provides authentication and authorization support
+            -->
             <dependency>
                 <groupId>org.springframework.security.oauth</groupId>
                 <artifactId>spring-security-oauth2</artifactId>
                 <version>${spring-oauth2.version}</version>
             </dependency>
 
-            <!-- Micrometer -->
+            <!-- 
+            Micrometer
+            A metrics collection and reporting library that integrates with various monitoring systems
+            Used for application metrics monitoring and performance measurement
+            -->
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-registry-prometheus</artifactId>
                 <version>${micrometer.version}</version>
             </dependency>
 
-            <!-- Freemarker -->
+            <!-- 
+            Freemarker
+            A template engine for generating text output based on templates
+            Used for generating dynamic HTML pages, emails, configuration files etc.
+            -->
             <dependency>
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
             </dependency>
 
-            <!-- Apache Poi related dependencies -->
+            <!-- 
+            Apache POI
+            Java API for Microsoft Documents
+            Used for reading and writing MS Office files like Excel, Word etc.
+            -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
@@ -525,7 +632,11 @@
                 <version>${apache.poi.version}</version>
             </dependency>
 
-            <!-- Apache Commons related dependencies -->
+            <!-- 
+            Apache Commons Compress
+            Library for working with compression and archive formats
+            Supports various compression algorithms and archive formats like zip, tar, gzip etc.
+            -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
@@ -533,15 +644,21 @@
             </dependency>
 
             <!--
-             Jakarta Activation API is a Java API for activating various MIME types
-             -->
+            Jakarta Activation API
+            Framework for determining the type of arbitrary pieces of data
+            Used for handling MIME types and data activation
+            -->
             <dependency>
                 <groupId>jakarta.activation</groupId>
                 <artifactId>jakarta.activation-api</artifactId>
                 <version>${activation.version}</version>
             </dependency>
 
-            <!-- Java Native Access related dependencies -->
+            <!-- 
+            Java Native Access (JNA)
+            Library for accessing native shared libraries directly from Java
+            Enables Java code to call C/C++ functions
+            -->
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna</artifactId>
@@ -553,21 +670,33 @@
                 <version>${jna.version}</version>
             </dependency>
 
-            <!-- Operating System and Hardware Information -->
+            <!-- 
+            OSHI (Operating System and Hardware Information)
+            Library for retrieving system information
+            Provides detailed hardware and OS information across platforms
+            -->
             <dependency>
                 <groupId>com.github.oshi</groupId>
                 <artifactId>oshi-core</artifactId>
                 <version>${oshi.version}</version>
             </dependency>
 
-            <!-- OPC UA related dependencies -->
+            <!-- 
+            Eclipse Milo OPC UA SDK
+            Implementation of the OPC UA protocol
+            Used for industrial automation and IoT communication
+            -->
             <dependency>
                 <groupId>org.eclipse.milo</groupId>
                 <artifactId>sdk-client</artifactId>
                 <version>${milo.version}</version>
             </dependency>
 
-            <!-- Mqtt related dependencies -->
+            <!-- 
+            Eclipse Paho MQTT Client
+            Implementation of MQTT protocol clients
+            Used for IoT messaging and lightweight publish-subscribe communication
+            -->
             <dependency>
                 <groupId>org.eclipse.paho</groupId>
                 <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
@@ -594,6 +723,12 @@
             <!--
             Java COM related, used to communicate with DCOM (Distributed Component Object Model) services running on Microsoft Windows platforms
             DCOM (Distributed Component Object Model) is a remote procedure call (RPC) technology developed by Microsoft for inter-component communication across networks on Windows systems.
+            
+            J-Interop provides:
+            - Pure Java implementation of DCOM protocol
+            - COM/DCOM communication without native code
+            - Windows service and registry access
+            - Support for COM automation
             -->
             <dependency>
                 <groupId>org.jinterop</groupId>
@@ -601,7 +736,17 @@
                 <version>${j.interop.version}</version>
             </dependency>
 
-            <!-- Jackson related dependencies -->
+            <!-- 
+            Jackson related dependencies
+            Jackson is a high-performance JSON processor for Java with the following key features:
+            - jackson-core: Core streaming API and implementation for JSON
+            - jackson-annotations: General annotations for Jackson data processor
+            - jackson-databind: Data-binding functionality and tree-model
+            - jackson-dataformat-yaml: YAML format support
+            - jackson-datatype-jdk8: Support for JDK 8 data types
+            - jackson-datatype-jsr310: Support for Java 8 Date & Time API
+            - jackson-module-parameter-names: Support for accessing parameter names
+            -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
@@ -639,10 +784,14 @@
             </dependency>
 
             <!--
-            JAXB（Java Architecture for XML Binding）API related dependencies
-            - API for converting XML data to and from Java objects
-            - Used to perform binding operations on XML data at runtime
-            - Binding operations to support XML data
+            JAXB (Java Architecture for XML Binding) API related dependencies
+            
+            Key features:
+            - Converts XML to/from Java objects (marshalling/unmarshalling)
+            - Schema validation
+            - Customizable mapping between XML schema and Java objects
+            - Runtime XML data binding operations
+            - Support for XML schema evolution
             -->
             <dependency>
                 <groupId>javax.xml.bind</groupId>
@@ -661,8 +810,13 @@
             </dependency>
 
             <!--
-            Java Yaml related dependencies
-            SnakeYAML is a Java library for parsing and generating data in YAML (YAML Ain't Markup Language) format
+            Java YAML related dependencies
+            SnakeYAML provides:
+            - YAML 1.1 parser and emitter
+            - Support for all YAML types
+            - Dump/load Java objects to/from YAML
+            - Support for recursive objects
+            - High-level API for serialization
             -->
             <dependency>
                 <groupId>org.yaml</groupId>
