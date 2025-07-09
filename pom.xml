@@ -21,7 +21,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2025.6.1</version>
+    <version>2025.6.2</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-present</inceptionYear>
@@ -91,7 +91,7 @@
 
         <!-- General tools -->
         <jwt.version>0.12.6</jwt.version>
-        <okhttp.version>4.12.0</okhttp.version>
+        <okhttp.version>5.1.0</okhttp.version>
         <netty.version>4.2.2.Final</netty.version>
         <commons.io.version>2.19.0</commons.io.version>
         <jakarta.json.version>2.1.3</jakarta.json.version>
@@ -128,7 +128,7 @@
         running on Microsoft Windows platforms. It provides pure Java implementation of DCOM protocol.
         Updated on 2025.04.24, all latest, do not update to 3.0.0 or it will cause errors
         -->
-        <j.interop.version>2.0.4</j.interop.version>
+        <j.interop.version>3.0.0</j.interop.version>
 
         <!--
         OS Plugin related dependencies
@@ -142,7 +142,7 @@
          -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
         <graalvm.native.version>0.10.6</graalvm.native.version>
-        <maven.gpg.plugin>3.2.7</maven.gpg.plugin>
+        <maven.gpg.plugin>3.2.8</maven.gpg.plugin>
         <maven.source.plugin>3.3.1</maven.source.plugin>
         <maven.javadoc.plugin>3.11.2</maven.javadoc.plugin>
         <maven.compiler.plugin>3.13.0</maven.compiler.plugin>
@@ -968,6 +968,7 @@
                         <target>${java.version}</target>
                         <source>${java.version}</source>
                         <encoding>${project.build.sourceEncoding}</encoding>
+                        <useIncrementalCompilation>true</useIncrementalCompilation>
                         <compilerArgs>
                             <arg>-parameters</arg>
                         </compilerArgs>
@@ -1045,7 +1046,7 @@
 
                 <!--  Nexus Maven plugin -->
                 <plugin>
-                    <groupId>org.sonatype.</groupId>
+                    <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${maven.nexus.plugin.version}</version>
                     <extensions>true</extensions>
