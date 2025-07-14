@@ -149,7 +149,7 @@
         <maven.resource.plugin>3.3.1</maven.resource.plugin>
         <maven.dependency.plugin>3.8.1</maven.dependency.plugin>
         <maven.version.plugin>2.18.0</maven.version.plugin>
-        <maven.nexus.plugin.version>1.7.0</maven.nexus.plugin.version>
+        <maven.central.plugin.version>0.8.0</maven.central.plugin.version>
     </properties>
 
     <profiles>
@@ -197,22 +197,12 @@
                         <artifactId>maven-gpg-plugin</artifactId>
                     </plugin>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>
 
-            <distributionManagement>
-                <repository>
-                    <id>pnoker</id>
-                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>pnoker</id>
-                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-            </distributionManagement>
         </profile>
     </profiles>
 
@@ -1044,16 +1034,15 @@
                     </executions>
                 </plugin>
 
-                <!--  Nexus Maven plugin -->
+                <!--  Central Maven plugin -->
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>${maven.nexus.plugin.version}</version>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${maven.central.plugin.version}</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <serverId>pnoker</serverId>
-                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        <publishingServerId>pnoker</publishingServerId>
+                        <autoPublish>true</autoPublish>
                     </configuration>
                 </plugin>
 
