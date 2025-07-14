@@ -107,7 +107,7 @@
 
         <!-- Other dependencies -->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
-        <micrometer.version>1.15.1</micrometer.version>
+        <micrometer.version>1.15.2</micrometer.version>
         <freemarker.version>2.3.34</freemarker.version>
         <apache.poi.version>5.4.1</apache.poi.version>
         <apache.commons.version>1.27.1</apache.commons.version>
@@ -1046,7 +1046,7 @@
 
                 <!--  Nexus Maven plugin -->
                 <plugin>
-                    <groupId>org.sonatype.</groupId>
+                    <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${maven.nexus.plugin.version}</version>
                     <extensions>true</extensions>
