@@ -1046,7 +1046,7 @@
 
                 <!--  Nexus Maven plugin -->
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
+                    <groupId>org.sonatype.</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${maven.nexus.plugin.version}</version>
                     <extensions>true</extensions>
