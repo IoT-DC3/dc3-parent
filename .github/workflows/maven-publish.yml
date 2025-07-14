@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-name: Maven Deploy
+name: Maven Deploy & Release
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
   maven-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     steps:
       - name: Checkout
@@ -70,3 +70,48 @@ jobs:
           SERVER_URL: ${{ secrets.SERVER_URL }}
           SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+
+      - name: Extract version from tag
+        id: extract_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/dc3.release.}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
+
+      - name: Generate release notes
+        id: release_notes
+        run: |
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD~1 2>/dev/null || echo "")
+          if [ -n "$PREVIOUS_TAG" ]; then
+            CHANGES=$(git log --pretty=format:"- %s" $PREVIOUS_TAG..HEAD | head -20)
+          else
+            CHANGES=$(git log --pretty=format:"- %s" --reverse | head -20)
+          fi
+          
+          # 创建release notes
+          echo "release_notes<<EOF" >> $GITHUB_OUTPUT
+          echo "## DC3 Release ${{ steps.extract_version.outputs.version }}" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_OUTPUT
+          echo "### What's Changed" >> $GITHUB_OUTPUT
+          echo "$CHANGES" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_OUTPUT
+          echo "### Download" >> $GITHUB_OUTPUT
+          echo "- [Maven Central Repository](https://search.maven.org/artifact/io.github.pnoker/dc3-parent/${{ steps.extract_version.outputs.version }}/pom)" >> $GITHUB_OUTPUT
+          echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }})" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_OUTPUT
+          echo "### Documentation" >> $GITHUB_OUTPUT
+          echo "- [Project Documentation](https://github.com/pnoker/iot-dc3)" >> $GITHUB_OUTPUT
+          echo "- [Release Notes](https://github.com/${{ github.repository }}/releases)" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: DC3 Release ${{ steps.extract_version.outputs.version }}
+          body: ${{ steps.release_notes.outputs.release_notes }}
+          tag_name: ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

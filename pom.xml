@@ -128,7 +128,7 @@
         running on Microsoft Windows platforms. It provides pure Java implementation of DCOM protocol.
         Updated on 2025.04.24, all latest, do not update to 3.0.0 or it will cause errors
         -->
-        <j.interop.version>3.0.0</j.interop.version>
+        <j.interop.version>2.0.4</j.interop.version>
 
         <!--
         OS Plugin related dependencies
