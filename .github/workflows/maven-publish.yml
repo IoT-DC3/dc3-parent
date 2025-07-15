@@ -48,6 +48,7 @@ jobs:
       - name: Decrypt GPG key
         run: |
           echo "🔐 Starting GPG key decryption and import..."
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode > private-key.asc
           gpg --batch --import private-key.asc
           echo "✅ GPG key successfully imported"
           gpg --list-secret-keys --keyid-format LONG
