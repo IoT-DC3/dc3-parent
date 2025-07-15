@@ -58,12 +58,13 @@ jobs:
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
-      - name: Extract version from tag
+      - name: Extract version from pom.xml
         id: extract_version
         run: |
-          VERSION=${GITHUB_REF#refs/tags/dc3.release.}
+          echo "Extracting project version from pom.xml..."
+          VERSION=$(mvn -q help:evaluate -Dexpression=project.version -DforceStdout)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Extracted version: $VERSION"
+          echo "Successfully extracted version from pom.xml: $VERSION"
 
       - name: Generate release notes
         id: release_notes
