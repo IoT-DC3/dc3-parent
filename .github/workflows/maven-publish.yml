@@ -47,11 +47,19 @@ jobs:
 
       - name: Decrypt GPG key
         run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode > private-key.asc
+          echo "🔐 Starting GPG key decryption and import..."
           gpg --batch --import private-key.asc
+          echo "✅ GPG key successfully imported"
+          gpg --list-secret-keys --keyid-format LONG
+          echo "🔐 GPG key setup completed"
 
       - name: Build and deploy
-        run: mvn --settings .github/maven-settings.xml clean deploy -P deploy
+        run: |
+          echo "🚀 Starting Maven build and deploy process..."
+          echo "📦 Using deploy profile with Central Portal publishing"
+          echo "🔧 Maven settings: .github/maven-settings.xml"
+          mvn --settings .github/maven-settings.xml clean deploy -P deploy
+          echo "✅ Maven build and deploy completed successfully"
         env:
           SERVER_ID: ${{ secrets.SERVER_ID }}
           SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
@@ -61,41 +69,46 @@ jobs:
       - name: Extract version from pom.xml
         id: extract_version
         run: |
-          echo "Extracting project version from pom.xml..."
+          echo "📋 Extracting project version from pom.xml..."
           VERSION=$(mvn -q help:evaluate -Dexpression=project.version -DforceStdout)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Successfully extracted version from pom.xml: $VERSION"
+          echo "✅ Successfully extracted version from pom.xml: $VERSION"
+          echo "🏷️ Version will be used for GitHub Release: $VERSION"
 
       - name: Generate release notes
         id: release_notes
         run: |
+          echo "📝 Generating release notes..."
           PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD~1 2>/dev/null || echo "")
+          echo "🔍 Previous tag: ${PREVIOUS_TAG:-"No previous tag found"}"
+          echo "🏷️ Current tag: ${{ github.ref_name }}"
+          
           if [ -n "$PREVIOUS_TAG" ]; then
+            echo "📊 Collecting changes since $PREVIOUS_TAG..."
             CHANGES=$(git log --pretty=format:"- %s" $PREVIOUS_TAG..HEAD | head -20)
           else
+            echo "📊 Collecting all changes (no previous tag)..."
             CHANGES=$(git log --pretty=format:"- %s" --reverse | head -20)
           fi
           
+          echo "📄 Creating release notes content..."
           # 创建release notes
           echo "release_notes<<EOF" >> $GITHUB_OUTPUT
-          echo "## DC3 Release ${{ steps.extract_version.outputs.version }}" >> $GITHUB_OUTPUT
           echo "" >> $GITHUB_OUTPUT
           echo "### What's Changed" >> $GITHUB_OUTPUT
           echo "$CHANGES" >> $GITHUB_OUTPUT
           echo "" >> $GITHUB_OUTPUT
-          echo "### Download" >> $GITHUB_OUTPUT
-          echo "- [Maven Central Repository](https://search.maven.org/artifact/io.github.pnoker/dc3-parent/${{ steps.extract_version.outputs.version }}/pom)" >> $GITHUB_OUTPUT
-          echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }})" >> $GITHUB_OUTPUT
-          echo "" >> $GITHUB_OUTPUT
-          echo "### Documentation" >> $GITHUB_OUTPUT
-          echo "- [Project Documentation](https://github.com/pnoker/iot-dc3)" >> $GITHUB_OUTPUT
+          echo "### Release" >> $GITHUB_OUTPUT
+          echo "- [Maven Central Repository](https://search.maven.org/artifact/io.github.pnoker/dc3-parent)" >> $GITHUB_OUTPUT
+          echo "- [Project Documentation](https://github.com/${{ github.repository }})" >> $GITHUB_OUTPUT
           echo "- [Release Notes](https://github.com/${{ github.repository }}/releases)" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+          echo "✅ Release notes generated successfully"
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
-          name: DC3 Release ${{ steps.extract_version.outputs.version }}
+          name: ${{ steps.extract_version.outputs.version }}
           body: ${{ steps.release_notes.outputs.release_notes }}
           tag_name: ${{ github.ref_name }}
           draft: false
@@ -103,3 +116,12 @@ jobs:
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Release completion
+        run: |
+          echo "🎉 Release process completed successfully!"
+          echo "📦 Version: ${{ steps.extract_version.outputs.version }}"
+          echo "🏷️ Tag: ${{ github.ref_name }}"
+          echo "🔗 GitHub Release: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}"
+          echo "🔗 Maven Central: https://search.maven.org/artifact/io.github.pnoker/dc3-parent/${{ steps.extract_version.outputs.version }}/pom"
+          echo "✅ All deployment and release tasks completed"
