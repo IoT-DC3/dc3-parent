@@ -22,7 +22,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2025.9.1</version>
+    <version>2025.9.2</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-present</inceptionYear>
@@ -103,15 +103,14 @@
         <lombok.version>1.18.40</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-        <hutool.version>5.8.40</hutool.version>
-        <guava.version>33.4.8-jre</guava.version>
 
         <!-- Other dependencies -->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
         <micrometer.version>1.15.2</micrometer.version>
         <freemarker.version>2.3.34</freemarker.version>
         <apache.poi.version>5.4.1</apache.poi.version>
-        <apache.commons.version>1.28.0</apache.commons.version>
+        <apache.commons.lang3.version>3.18.0</apache.commons.lang3.version>
+        <apache.commons.compress.version>1.28.0</apache.commons.compress.version>
         <activation.version>2.1.3</activation.version>
         <jna.version>5.17.0</jna.version>
         <oshi.version>6.8.3</oshi.version>
@@ -550,29 +549,7 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- 
-            Hutool
-            Comprehensive Java utility library
-            Provides tools for encryption, HTTP requests, date operations etc.
-            -->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
-            </dependency>
-
-            <!-- 
-            Google Guava
-            Suite of core Java libraries from Google
-            Provides utilities for collections, caching, primitives support etc.
-            -->
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-
-            <!-- 
+            <!--
             Spring Security OAuth2
             OAuth2 security framework integration for Spring applications
             Provides authentication and authorization support
@@ -621,6 +598,19 @@
                 <version>${apache.poi.version}</version>
             </dependency>
 
+            <!--
+            Apache Commons Lang3
+            Provides helper utilities for the java.lang API
+            Includes StringUtils, ArrayUtils, ObjectUtils, DateUtils,
+            and builders for equals, hashCode, toString
+            Lightweight and commonly used as JDK enhancement
+            -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.commons.lang3.version}</version>
+            </dependency>
+
             <!-- 
             Apache Commons Compress
             Library for working with compression and archive formats
@@ -629,7 +619,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
-                <version>${apache.commons.version}</version>
+                <version>${apache.commons.compress.version}</version>
             </dependency>
 
             <!--
