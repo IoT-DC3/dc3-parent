@@ -22,7 +22,7 @@
     <groupId>io.github.pnoker</groupId>
     <artifactId>dc3-parent</artifactId>
     <name>${project.artifactId}</name>
-    <version>2025.9.3</version>
+    <version>2025.11.1</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2016-present</inceptionYear>
@@ -67,25 +67,25 @@
 
         <!--
         Spring related dependencies
-        Updated on 2025.10.06, all latest
+        Updated on 2025.11.11, all latest
         -->
-        <spring.boot.version>3.5.6</spring.boot.version>
+        <spring.boot.version>3.5.7</spring.boot.version>
         <spring.cloud.version>2025.0.0</spring.cloud.version>
 
         <!--
         gRpc related dependencies
-        Updated on 2025.10.06, only protobuf.version cannot use the latest version
+        Updated on 2025.11.11, only protobuf.version cannot use the latest version
         Because the tool that generates stub code has stopped being maintained.
          -->
-        <grpc.version>1.75.0</grpc.version>
-        <protobuf.version>4.32.0</protobuf.version>
+        <grpc.version>1.76.0</grpc.version>
+        <protobuf.version>4.33.0</protobuf.version>
         <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
 
         <!--
          Database related dependencies,
          When mybatis.plus.version is upgraded to 3.5.9,
          an error will be reported during compilation.
-         Updated on 2025.10.06, all latest
+         Updated on 2025.11.11, all latest
          -->
         <mybatis.plus.version>3.5.14</mybatis.plus.version>
         <mybatis.plus.dynamic.version>4.3.1</mybatis.plus.dynamic.version>
@@ -93,31 +93,31 @@
         <!-- General tools -->
         <jwt.version>0.13.0</jwt.version>
         <okhttp.version>4.12.0</okhttp.version>
-        <netty.version>4.2.6.Final</netty.version>
-        <commons.io.version>2.20.0</commons.io.version>
+        <netty.version>4.2.7.Final</netty.version>
+        <commons.io.version>2.21.0</commons.io.version>
         <jakarta.json.version>2.1.3</jakarta.json.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
         <jakarta.validation.version>3.1.1</jakarta.validation.version>
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
-        <hibernate.validator.version>9.0.1.Final</hibernate.validator.version>
+        <hibernate.validator.version>9.1.0.Final</hibernate.validator.version>
         <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
 
         <!-- Other dependencies -->
         <spring-oauth2.version>2.5.2.RELEASE</spring-oauth2.version>
-        <micrometer.version>1.15.2</micrometer.version>
+        <micrometer.version>1.16.0</micrometer.version>
         <freemarker.version>2.3.34</freemarker.version>
         <apache.poi.version>5.4.1</apache.poi.version>
         <apache.commons.lang3.version>3.19.0</apache.commons.lang3.version>
         <apache.commons.compress.version>1.28.0</apache.commons.compress.version>
-        <activation.version>2.1.3</activation.version>
+        <activation.version>2.1.4</activation.version>
         <jna.version>5.18.1</jna.version>
-        <oshi.version>6.9.0</oshi.version>
+        <oshi.version>6.9.1</oshi.version>
         <milo.version>0.6.16</milo.version>
         <paho.mqttv3.version>1.2.5</paho.mqttv3.version>
         <bouncycastle.version>1.82</bouncycastle.version>
-        <jackson.version>2.20.0</jackson.version>
+        <jackson.version>2.20.1</jackson.version>
         <jackson.annotations.version>2.20</jackson.annotations.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
         <jaxb.version>4.0.6</jaxb.version>
@@ -127,22 +127,22 @@
         J-Interop version
         J-Interop is a Java library that enables Java applications to communicate with DCOM (Distributed Component Object Model) services 
         running on Microsoft Windows platforms. It provides pure Java implementation of DCOM protocol.
-        Updated on 2025.10.06, all latest, do not update to 3.0.0 or it will cause errors
+        Updated on 2025.11.11, all latest, do not update to 3.0.0 or it will cause errors
         -->
         <j.interop.version>2.0.4</j.interop.version>
 
         <!--
         OS Plugin related dependencies
-        Updated on 2025.10.06, all latest
+        Updated on 2025.11.11, all latest
          -->
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
 
         <!-- 
         Plugin related dependencies
-        Updated on 2025.10.06, all latest
+        Updated on 2025.11.11, all latest
          -->
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
-        <graalvm.native.version>0.11.1</graalvm.native.version>
+        <graalvm.native.version>0.11.2</graalvm.native.version>
         <maven.gpg.plugin>3.2.8</maven.gpg.plugin>
         <maven.source.plugin>3.3.1</maven.source.plugin>
         <maven.javadoc.plugin>3.12.0</maven.javadoc.plugin>
