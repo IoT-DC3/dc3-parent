@@ -19,6 +19,46 @@
 
 set -euo pipefail
 
+update_project_version() {
+    local target_version="$1"
+    local pom_file="pom.xml"
+    local tmp_file=""
+    local seen_artifact=0
+    local replaced=0
+
+    tmp_file="$(mktemp)"
+    while IFS= read -r line; do
+        if [[ ${seen_artifact} -eq 0 && "${line}" == *"<artifactId>dc3-parent</artifactId>"* ]]; then
+            seen_artifact=1
+        fi
+
+        if [[ ${seen_artifact} -eq 1 && ${replaced} -eq 0 && "${line}" == *"<version>"*"</version>"* ]]; then
+            local indent
+            indent="${line%%<version>*}"
+            echo "${indent}<version>${target_version}</version>" >> "${tmp_file}"
+            replaced=1
+        else
+            echo "${line}" >> "${tmp_file}"
+        fi
+    done < "${pom_file}"
+
+    if [[ ${replaced} -eq 0 ]]; then
+        rm -f "${tmp_file}"
+        echo "Failed to update ${pom_file}: project version node not found."
+        exit 1
+    fi
+
+    mv "${tmp_file}" "${pom_file}"
+}
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "${repo_root}"
+
+if [[ -n "$(git status --porcelain)" ]]; then
+    echo "Working tree is not clean. Please commit or stash local changes first."
+    exit 1
+fi
+
 branch="$(git rev-parse --abbrev-ref HEAD)"
 type=""
 
@@ -33,26 +73,44 @@ if [[ -z "${type}" ]]; then
     exit 1
 fi
 
-# Sync remote tags before allocating the next sequence number.
-git fetch --tags --prune
+git fetch --tags --prune origin
+git pull --rebase origin "${branch}"
 
-date_part="$(date +'%Y%m%d')"
+year="$(date +'%Y')"
+month=$((10#$(date +'%m')))
+day=$((10#$(date +'%d')))
+date_part="${year}$(printf '%02d%02d' "${month}" "${day}")"
+base_version="${year}.${month}.${day}"
 prefix="dc3.${type}.${date_part}"
 tag=""
+index=""
 
 for i in $(seq 0 99); do
     candidate="${prefix}.${i}"
     if ! git rev-parse -q --verify "refs/tags/${candidate}" >/dev/null; then
         tag="${candidate}"
+        index="${i}"
         break
     fi
 done
 
-if [[ -z "${tag}" ]]; then
+if [[ -z "${tag}" || -z "${index}" ]]; then
     echo "No available tag index for ${prefix}.0-99. Please clean old tags or adjust naming strategy."
     exit 1
 fi
 
-echo "${tag}"
+new_version="${base_version}"
+if [[ "${index}" -gt 0 ]]; then
+    new_version="${base_version}.${index}"
+fi
+
+update_project_version "${new_version}"
+
+git add pom.xml
+git commit -m "release: ${new_version}"
+
+echo "Version: ${new_version}"
+echo "Tag: ${tag}"
+
 git tag "${tag}"
-git push origin "${tag}"
+git push origin "${branch}" "${tag}"
