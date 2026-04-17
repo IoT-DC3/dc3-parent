@@ -22,7 +22,7 @@
 
     <servers>
         <server>
-            <id>${env.SERVER_ID}</id>
+            <id>pnoker</id>
             <username>${env.SERVER_USERNAME}</username>
             <password>${env.SERVER_PASSWORD}</password>
         </server>
