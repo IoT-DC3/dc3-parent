@@ -133,10 +133,6 @@
         <maven.central.plugin.version>0.10.0</maven.central.plugin.version>
     </properties>
 
-    <prerequisites>
-        <maven>3.8.0</maven>
-    </prerequisites>
-
     <profiles>
         <profile>
             <id>version</id>
