@@ -17,39 +17,42 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-set -e
+set -euo pipefail
 
+branch="$(git rev-parse --abbrev-ref HEAD)"
 type=""
 
-# shellcheck disable=SC2092
-# shellcheck disable=SC2006
-if `git status | grep "develop" &>/dev/null`; then
+if [[ "${branch}" == "develop" ]]; then
     type="develop"
-fi
-
-# shellcheck disable=SC2092
-# shellcheck disable=SC2006
-if `git status | grep "release" &>/dev/null`; then
+elif [[ "${branch}" == "release" || "${branch}" == "main" ]]; then
     type="release"
 fi
 
-# shellcheck disable=SC2092
-# shellcheck disable=SC2006
-if `git status | grep "main" &>/dev/null`; then
-    type="release"
+if [[ -z "${type}" ]]; then
+    echo -e "This branch doesn't support tagging, please switch to the \033[31mdevelop\033[0m, \033[31mrelease\033[0m, or \033[31mmain\033[0m branch."
+    exit 1
 fi
 
-if [[ ${type} == "" ]]; then
-    echo -e "This branch doesn't support tagging, please switch to the \033[31mdevelop\033[0m or \033[31mrelease\033[0m branch."
-    exit
+# Sync remote tags before allocating the next sequence number.
+git fetch --tags --prune
+
+date_part="$(date +'%Y%m%d')"
+prefix="dc3.${type}.${date_part}"
+tag=""
+
+for i in $(seq 0 99); do
+    candidate="${prefix}.${i}"
+    if ! git rev-parse -q --verify "refs/tags/${candidate}" >/dev/null; then
+        tag="${candidate}"
+        break
+    fi
+done
+
+if [[ -z "${tag}" ]]; then
+    echo "No available tag index for ${prefix}.0-99. Please clean old tags or adjust naming strategy."
+    exit 1
 fi
 
-git pull --tags
-
-# shellcheck disable=SC2046
-# shellcheck disable=SC2116
-tag=$(echo dc3.${type}.$(date +'%Y%m%d').$(git tag -l "dc3.${type}.$(date +'%Y%m%d').*" | wc -l | xargs printf '%02d'))
 echo "${tag}"
 git tag "${tag}"
-
-git push origin --tags
+git push origin "${tag}"
