@@ -68,7 +68,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Framework BOMs -->
-        <spring.boot.version>4.0.5</spring.boot.version>
+        <spring.boot.version>4.0.6</spring.boot.version>
         <spring.cloud.version>2025.1.1</spring.cloud.version>
 
         <!-- RPC and messaging -->
@@ -86,7 +86,7 @@
 
         <!-- Serialization and data formats -->
         <tools.jackson.version>3.1.2</tools.jackson.version>
-        <jackson.version>2.21.2</jackson.version>
+        <jackson.version>2.21.3</jackson.version>
         <jackson.annotations.version>2.21</jackson.annotations.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
         <jaxb.version>4.0.7</jaxb.version>
@@ -94,19 +94,19 @@
 
         <!-- Platform and core utilities -->
         <activation.version>2.1.4</activation.version>
-        <commons.io.version>2.21.0</commons.io.version>
+        <commons.io.version>2.22.0</commons.io.version>
         <apache.commons.compress.version>1.28.0</apache.commons.compress.version>
         <apache.commons.lang3.version>3.20.0</apache.commons.lang3.version>
         <apache.poi.version>5.5.1</apache.poi.version>
         <freemarker.version>2.3.34</freemarker.version>
         <jna.version>5.18.1</jna.version>
-        <oshi.version>6.11.1</oshi.version>
+        <oshi.version>6.12.0</oshi.version>
         <jakarta.json.version>2.1.3</jakarta.json.version>
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
         <jakarta.validation.version>3.1.1</jakarta.validation.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
         <hibernate.validator.version>9.1.0.Final</hibernate.validator.version>
-        <lombok.version>1.18.44</lombok.version>
+        <lombok.version>1.18.46</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
 
@@ -122,7 +122,7 @@
         <!-- Build plugins -->
         <os.maven.plugin.version>1.7.1</os.maven.plugin.version>
         <protobuf.plugin.version>0.6.1</protobuf.plugin.version>
-        <graalvm.native.version>1.0.0</graalvm.native.version>
+        <graalvm.native.version>1.1.0</graalvm.native.version>
         <maven.gpg.plugin>3.2.8</maven.gpg.plugin>
         <maven.source.plugin>3.4.0</maven.source.plugin>
         <maven.javadoc.plugin>3.12.0</maven.javadoc.plugin>

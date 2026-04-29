@@ -2,7 +2,8 @@
 
 ## Project Overview
 
-IoT DC3 Parent (`dc3-parent`) is a Maven parent/BOM project (`packaging=pom`) for the IoT DC3 distributed IoT platform. It centralizes dependency versions, plugin management, and release/deploy rules for downstream DC3 components. There are no Maven `<modules>` in this repository — the source of truth is `pom.xml`.
+IoT DC3 Parent (`dc3-parent`) is a Maven parent/BOM project (`packaging=pom`) for the IoT DC3 distributed IoT platform. It centralizes dependency versions, plugin management, and
+release/deploy rules for downstream DC3 components. There are no Maven `<modules>` in this repository — the source of truth is `pom.xml`.
 
 ## Tech Stack
 
