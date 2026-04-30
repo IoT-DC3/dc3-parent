@@ -74,7 +74,6 @@
         <!-- RPC and messaging -->
         <grpc.version>1.80.0</grpc.version>
         <protobuf.version>4.34.1</protobuf.version>
-        <grpc.spring.boot.version>3.1.0.RELEASE</grpc.spring.boot.version>
         <spring-grpc.version>1.0.3</spring-grpc.version>
         <okhttp.version>5.3.2</okhttp.version>
         <netty.version>4.2.10.Final</netty.version>
@@ -289,21 +288,6 @@
                 <groupId>io.grpc</groupId>
                 <artifactId>grpc-stub</artifactId>
                 <version>${grpc.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.devh</groupId>
-                <artifactId>grpc-client-spring-boot-starter</artifactId>
-                <version>${grpc.spring.boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.devh</groupId>
-                <artifactId>grpc-server-spring-boot-starter</artifactId>
-                <version>${grpc.spring.boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.devh</groupId>
-                <artifactId>grpc-spring-boot-starter</artifactId>
-                <version>${grpc.spring.boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.grpc</groupId>
