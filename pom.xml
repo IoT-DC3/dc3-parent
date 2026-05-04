@@ -72,7 +72,7 @@
         <spring.cloud.version>2025.1.1</spring.cloud.version>
 
         <!-- RPC and messaging -->
-        <grpc.version>1.80.0</grpc.version>
+        <grpc.version>1.81.0</grpc.version>
         <protobuf.version>4.34.1</protobuf.version>
         <spring-grpc.version>1.0.3</spring-grpc.version>
         <okhttp.version>5.3.2</okhttp.version>
@@ -85,7 +85,7 @@
         <mybatis.plus.dynamic.version>4.5.0</mybatis.plus.dynamic.version>
 
         <!-- Serialization and data formats -->
-        <tools.jackson.version>3.1.2</tools.jackson.version>
+        <tools.jackson.version>3.1.3</tools.jackson.version>
         <jackson.version>2.21.3</jackson.version>
         <jackson.annotations.version>2.21</jackson.annotations.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
@@ -100,7 +100,7 @@
         <apache.poi.version>5.5.1</apache.poi.version>
         <freemarker.version>2.3.34</freemarker.version>
         <jna.version>5.18.1</jna.version>
-        <oshi.version>6.12.0</oshi.version>
+        <oshi.version>7.0.1</oshi.version>
         <jakarta.json.version>2.1.3</jakarta.json.version>
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
         <jakarta.validation.version>3.1.1</jakarta.validation.version>
